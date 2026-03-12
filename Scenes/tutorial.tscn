@@ -638,15 +638,18 @@ scale = Vector2(2, 2)
 texture = ExtResource("31_mi3ry")
 
 [node name="Wood" type="Sprite2D" parent="." unique_id=2057669290]
+texture_filter = 1
 position = Vector2(500, 469)
 scale = Vector2(2, 2)
 texture = ExtResource("32_1yfkk")
 
 [node name="Log3" type="Sprite2D" parent="." unique_id=327798124]
+texture_filter = 1
 position = Vector2(460, 477)
 texture = ExtResource("28_enkcc")
 
 [node name="Wood2" type="Sprite2D" parent="." unique_id=347238130]
+texture_filter = 1
 position = Vector2(538, 472)
 scale = Vector2(2, 2)
 texture = ExtResource("33_enkcc")
