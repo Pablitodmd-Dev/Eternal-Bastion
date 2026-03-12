@@ -2,7 +2,7 @@ extends Node2D
 
 var mana: float = 50.0
 var max_mana: float = 100.0
-var mana_regeneration_rate: float = 1.5
+var mana_regeneration_rate: float = 2.5
 @onready var mana_label: Label = $CanvasLayer/ManaLabel
 
 func _process(delta):
