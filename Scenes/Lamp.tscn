@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1opnnaitc0j2"]
+
+[ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="1_7gns8"]
+
+[node name="Lamp" type="Sprite2D" unique_id=547907869]
+texture_filter = 1
+position = Vector2(10.500002, -20.749996)
+scale = Vector2(2.0500002, 2.1857145)
+texture = ExtResource("1_7gns8")
