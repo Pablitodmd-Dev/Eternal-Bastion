@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://ca5kra51hrmdj" path="res://Assets/fields-tileset/1 Tiles/FieldsTileset.png" id="1_rwowx"]
 [ext_resource type="Texture2D" uid="uid://btw45lo6jv4mj" path="res://Assets/fields-tileset/2 Objects/8 Camp/2.png" id="2_hu44a"]
-[ext_resource type="Texture2D" uid="uid://c21sb3ab4x0wx" path="res://Assets/fields-tileset/2 Objects/8 Camp/5.png" id="3_0cr88"]
+[ext_resource type="Texture2D" uid="uid://c06u3e600pkpk" path="res://Assets/fields-tileset/2 Objects/3 Pointer/1.png" id="4_0cr88"]
 [ext_resource type="Texture2D" uid="uid://roblod8jehsv" path="res://Assets/fields-tileset/2 Objects/8 Camp/4.png" id="4_4t6hg"]
-[ext_resource type="Texture2D" uid="uid://dhisdakvrxsod" path="res://Assets/fields-tileset/2 Objects/2 Fence/1.png" id="5_7vrqn"]
+[ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
+[ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhfnd"]
 texture = ExtResource("1_rwowx")
@@ -532,6 +534,106 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_4hjyh"]
 sources/0 = SubResource("TileSetAtlasSource_vmw6g")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hjyh"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsk3x"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl7dh"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4o0u"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08xv"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g52lx"]
+atlas = ExtResource("5_4t6hg")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lped"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hjyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsk3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl7dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4o0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g52lx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cr88"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t6hg"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vrqn"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhfnd"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvjhf"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmw6g"]
+atlas = ExtResource("5_hu44a")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4hjyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cr88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t6hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vrqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhfnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvjhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmw6g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Tutorial" type="Node2D" unique_id=1662794123]
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=238231998]
@@ -547,17 +649,40 @@ position = Vector2(94.5, 102.75)
 scale = Vector2(1.9722222, 1.5392157)
 texture = ExtResource("2_hu44a")
 
-[node name="Fire1" type="Sprite2D" parent="." unique_id=1113609971]
-position = Vector2(182.125, 159)
-scale = Vector2(1.8295459, 2.4642859)
-texture = ExtResource("3_0cr88")
-
 [node name="Tent2" type="Sprite2D" parent="." unique_id=494729442]
 position = Vector2(285, 140)
 scale = Vector2(1.7142857, 1.9736842)
 texture = ExtResource("4_4t6hg")
 
-[node name="WoodenFense1" type="Sprite2D" parent="." unique_id=153817282]
-position = Vector2(20, 333)
+[node name="Signal1" type="Sprite2D" parent="." unique_id=852887441]
+position = Vector2(20, 320)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_0cr88")
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1092631197]
+position = Vector2(922, 314)
+sprite_frames = SubResource("SpriteFrames_0lped")
+autoplay = "default"
+frame_progress = 0.030575871
+
+[node name="Node2D" parent="." unique_id=177764836 instance=ExtResource("5_rwowx")]
+position = Vector2(20, 338)
+scale = Vector2(1.5, 1.5)
+
+[node name="Node2D2" parent="." unique_id=447018505 instance=ExtResource("5_rwowx")]
+position = Vector2(20, 431)
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=295319352]
+position = Vector2(181, 117)
 scale = Vector2(2, 2)
-texture = ExtResource("5_7vrqn")
+sprite_frames = SubResource("SpriteFrames_4hjyh")
+autoplay = "default"
+frame_progress = 0.95288384
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1974692270]
+position = Vector2(922, 413)
+sprite_frames = SubResource("SpriteFrames_0lped")
+autoplay = "default"
+frame_progress = 0.6295796
