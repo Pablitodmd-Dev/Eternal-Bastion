@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://roblod8jehsv" path="res://Assets/fields-tileset/2 Objects/8 Camp/4.png" id="4_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
-[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
 
@@ -652,7 +652,7 @@ scale = Vector2(1.9722222, 1.5392157)
 texture = ExtResource("2_hu44a")
 
 [node name="Tent2" type="Sprite2D" parent="." unique_id=494729442]
-position = Vector2(285, 140)
+position = Vector2(283, 154)
 scale = Vector2(1.7142857, 1.9736842)
 texture = ExtResource("4_4t6hg")
 
@@ -692,4 +692,4 @@ frame_progress = 0.6295796
 [node name="CanvasLayer2" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
 
 [node name="Node2D3" parent="." unique_id=878360067 instance=ExtResource("9_bhfnd")]
-position = Vector2(413, 286)
+position = Vector2(272, 324)

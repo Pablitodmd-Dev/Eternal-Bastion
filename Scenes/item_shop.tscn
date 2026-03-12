@@ -41,9 +41,9 @@ anchor_top = 0.91600007
 anchor_right = 0.71000004
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = -64.568054
+offset_top = -73.568054
 offset_right = 247.07996
-offset_bottom = 11.0
+offset_bottom = 2.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1wx5h")
 
@@ -149,14 +149,14 @@ stretch_mode = 0
 
 [node name="ManaLabel" type="Label" parent="." unique_id=1725608897]
 offset_left = 928.0
-offset_top = 548.0
+offset_top = 539.0
 offset_right = 1030.0
-offset_bottom = 576.0
+offset_bottom = 567.0
 text = "Mana: "
 
 [node name="GoldLabel" type="Label" parent="." unique_id=1094424222]
 offset_left = 928.0
-offset_top = 601.0
+offset_top = 592.0
 offset_right = 1030.0
-offset_bottom = 629.0
+offset_bottom = 620.0
 text = "Gold:"

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dqjtwi01pcepy"]
+
+[ext_resource type="Script" path="res://Scripts/castle.gd" id="1_ayoda"]
+[ext_resource type="Texture2D" uid="uid://dhnsf8nnyg4vp" path="res://Assets/fields-tileset/2 Objects/7 House/1.png" id="2_r1mkv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6e6l"]
+size = Vector2(117, 110)
+
+[node name="Castle" type="Area2D" unique_id=875019344]
+script = ExtResource("1_ayoda")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338408877]
+scale = Vector2(2, 2)
+texture = ExtResource("2_r1mkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122967994]
+position = Vector2(-0.5, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_p6e6l")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
