@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kc5q25ppnab1"]
 
-[ext_resource type="Texture2D" uid="uid://8il07pk33dt3" path="res://Assets/Towers/archer-towers/2 Idle/1.png" id="1_t35fu"]
+[ext_resource type="Texture2D" uid="uid://dmutfunb2lt5d" path="res://Assets/Towers/stone-tower/PNG/13.png" id="1_rtm3b"]
 [ext_resource type="Texture2D" uid="uid://ci23xh6hcios3" path="res://Assets/Towers/archer-towers/3 Units/1/S_Preattack.png" id="2_rtm3b"]
 [ext_resource type="Texture2D" uid="uid://dql6jibpxcnqn" path="res://Assets/Towers/archer-towers/3 Units/3/D_Preattack.png" id="3_2x1yp"]
 [ext_resource type="Texture2D" uid="uid://dn4g2cb6rp65l" path="res://Assets/Towers/stone-tower/PNG/3.png" id="4_m50t8"]
@@ -59,7 +59,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-texture_normal = ExtResource("1_t35fu")
+texture_normal = ExtResource("1_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
 

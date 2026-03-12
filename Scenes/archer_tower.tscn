@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dqw6765xutj7b"]
+
+[ext_resource type="Texture2D" uid="uid://dqxda0744v5fv" path="res://Assets/Towers/archer-towers/1 Upgrade/1.png" id="1_o5lax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t6pf"]
+atlas = ExtResource("1_o5lax")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uhqc"]
+atlas = ExtResource("1_o5lax")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01au3"]
+atlas = ExtResource("1_o5lax")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13lyk"]
+atlas = ExtResource("1_o5lax")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4dcu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t6pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uhqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01au3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13lyk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=878360067]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=716156231]
+position = Vector2(3, -63)
+sprite_frames = SubResource("SpriteFrames_s4dcu")
+frame = 2
+frame_progress = 0.7555538
