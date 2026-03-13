@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6qb25wa6kcfe"]
 
-[ext_resource type="Script" uid="uid://dv2d8s8oi40vv" path="res://Scenes/monster_1.gd" id="1_6nmhp"]
+[ext_resource type="Script" uid="uid://dv2d8s8oi40vv" path="res://Scripts/monster_1.gd" id="1_6nmhp"]
 [ext_resource type="Texture2D" uid="uid://lhrybj1rpmf8" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_000.png" id="1_fv8n3"]
 [ext_resource type="Texture2D" uid="uid://d2oplonim3dk5" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_000.png" id="1_hphb8"]
 [ext_resource type="Texture2D" uid="uid://dxfsgagocoeuo" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_001.png" id="2_n104q"]
@@ -447,7 +447,7 @@ scale = Vector2(0.24169053, 0.22216494)
 sprite_frames = SubResource("SpriteFrames_y42e7")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.45200482
+frame_progress = 0.4299783
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690771051]
 position = Vector2(-16, 5.5)
