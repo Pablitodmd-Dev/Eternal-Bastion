@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
-[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
 [ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://xs145albq7gs" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp5.png" id="32_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://bc7yklhrpx2nv" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp6.png" id="33_enkcc"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="34_cv7sw"]
+[ext_resource type="PackedScene" uid="uid://dm8ubav544gi2" path="res://Scenes/spawner.tscn" id="36_enkcc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhfnd"]
 texture = ExtResource("1_rwowx")
@@ -278,6 +279,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_enkcc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4, 390, 0, 0, 0, 0, 922, 390)
+}
+point_count = 2
+
 [node name="Tutorial" type="Node2D" unique_id=1662794123]
 script = ExtResource("1_70gml")
 
@@ -369,9 +376,6 @@ position = Vector2(608, 329)
 
 [node name="Platform4" parent="." unique_id=1368731829 instance=ExtResource("9_bhfnd")]
 position = Vector2(782, 330)
-
-[node name="Castle" parent="." unique_id=875019344 instance=ExtResource("11_8va2t")]
-position = Vector2(1031, 335)
 
 [node name="Stone" type="Sprite2D" parent="." unique_id=518640525]
 texture_filter = 1
@@ -491,15 +495,6 @@ texture_filter = 1
 position = Vector2(974, 92)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_lh8ri")
-
-[node name="Lamp10" parent="." unique_id=2016834404 instance=ExtResource("6_1yfkk")]
-position = Vector2(325, 402.00003)
-
-[node name="Lamp4" type="Sprite2D" parent="." unique_id=379434396]
-texture_filter = 1
-position = Vector2(719, 408)
-scale = Vector2(2, 2)
-texture = ExtResource("6_radxo")
 
 [node name="TentCom1" type="Sprite2D" parent="." unique_id=866660078]
 texture_filter = 1
@@ -665,3 +660,25 @@ texture_filter = 1
 position = Vector2(850, 303)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("34_cv7sw")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=414557241]
+position = Vector2(0, -19)
+curve = SubResource("Curve2D_enkcc")
+
+[node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("36_enkcc")]
+position = Vector2(610, 224)
+scale = Vector2(2, 2)
+
+[node name="Lamp4" type="Sprite2D" parent="." unique_id=379434396]
+z_index = 50
+texture_filter = 1
+position = Vector2(719, 408)
+scale = Vector2(2, 2)
+texture = ExtResource("6_radxo")
+
+[node name="Lamp10" parent="." unique_id=2016834404 instance=ExtResource("6_1yfkk")]
+z_index = 50
+position = Vector2(325, 402.00003)
+
+[node name="Castle" parent="." unique_id=875019344 instance=ExtResource("11_8va2t")]
+position = Vector2(1031, 335)

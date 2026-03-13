@@ -446,8 +446,8 @@ animations = [{
 [node name="Node2D" type="Node2D" unique_id=1943997119]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678338679]
-position = Vector2(60, -130)
+scale = Vector2(0.24169053, 0.22216494)
 sprite_frames = SubResource("SpriteFrames_y42e7")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.2435574
+frame_progress = 0.15589337
