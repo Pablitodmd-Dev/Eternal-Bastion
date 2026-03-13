@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6e6l"]
 size = Vector2(117, 110)
 
-[node name="Castle" type="Area2D" unique_id=875019344]
+[node name="Castle" type="Area2D" unique_id=875019344 groups=["Castle"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338408877]
 texture_filter = 1
