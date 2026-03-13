@@ -357,6 +357,7 @@ autoplay = "default"
 frame_progress = 0.95288384
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1974692270]
+z_index = 60
 texture_filter = 1
 position = Vector2(900, 413)
 sprite_frames = SubResource("SpriteFrames_0lped")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c6qb25wa6kcfe"]
 
+[ext_resource type="Script" uid="uid://dv2d8s8oi40vv" path="res://Scenes/monster_1.gd" id="1_6nmhp"]
 [ext_resource type="Texture2D" uid="uid://lhrybj1rpmf8" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_000.png" id="1_fv8n3"]
 [ext_resource type="Texture2D" uid="uid://d2oplonim3dk5" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_000.png" id="1_hphb8"]
 [ext_resource type="Texture2D" uid="uid://dxfsgagocoeuo" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_001.png" id="2_n104q"]
@@ -80,8 +81,6 @@
 [ext_resource type="Texture2D" uid="uid://drlnmww55pyv" path="res://Assets/Monsters/PNG/3/3_enemies_1_idle_015.png" id="78_5mkmt"]
 [ext_resource type="Texture2D" uid="uid://bwb5qq75mbxk1" path="res://Assets/Monsters/PNG/3/3_enemies_1_idle_016.png" id="79_qh6fh"]
 [ext_resource type="Texture2D" uid="uid://8hadtvabwfwv" path="res://Assets/Monsters/PNG/3/3_enemies_1_idle_017.png" id="80_oysge"]
-[ext_resource type="Texture2D" uid="uid://y4b4uyhpgwtb" path="res://Assets/Monsters/PNG/3/3_enemies_1_idle_018.png" id="81_p0kkp"]
-[ext_resource type="Texture2D" uid="uid://yufm65c7gw1p" path="res://Assets/Monsters/PNG/3/3_enemies_1_idle_019.png" id="82_ap5go"]
 [ext_resource type="Texture2D" uid="uid://c1ccy7pjfgeub" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_002.png" id="83_pveo3"]
 [ext_resource type="Texture2D" uid="uid://0nrrbjnp3sv7" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_003.png" id="84_4rx2h"]
 [ext_resource type="Texture2D" uid="uid://d3raxqhbowbrc" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_004.png" id="85_0507y"]
@@ -366,12 +365,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("80_oysge")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_p0kkp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_ap5go")
 }],
 "loop": true,
 "name": &"Idle",
@@ -443,11 +436,21 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1943997119]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nmhp"]
+size = Vector2(28, 49)
+
+[node name="Monster1" type="Area2D" unique_id=1913571639]
+script = ExtResource("1_6nmhp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678338679]
 scale = Vector2(0.24169053, 0.22216494)
 sprite_frames = SubResource("SpriteFrames_y42e7")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.15589337
+frame_progress = 0.45200482
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690771051]
+position = Vector2(-16, 5.5)
+shape = SubResource("RectangleShape2D_6nmhp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
