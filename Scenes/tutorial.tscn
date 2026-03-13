@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
 [ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
-[ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
+[ext_resource type="PackedScene" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
@@ -226,7 +226,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cr88"]
@@ -276,7 +276,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Curve2D" id="Curve2D_enkcc"]
@@ -338,7 +338,7 @@ texture_filter = 1
 position = Vector2(900, 314)
 sprite_frames = SubResource("SpriteFrames_0lped")
 autoplay = "default"
-frame_progress = 0.030575871
+frame_progress = 0.7669073
 
 [node name="Node2D" parent="." unique_id=177764836 instance=ExtResource("5_rwowx")]
 position = Vector2(20, 338)
@@ -354,7 +354,7 @@ position = Vector2(181, 117)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4hjyh")
 autoplay = "default"
-frame_progress = 0.95288384
+frame_progress = 0.6438962
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1974692270]
 z_index = 60
@@ -362,7 +362,7 @@ texture_filter = 1
 position = Vector2(900, 413)
 sprite_frames = SubResource("SpriteFrames_0lped")
 autoplay = "default"
-frame_progress = 0.6295796
+frame_progress = 0.89541
 
 [node name="CanvasLayer" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
 

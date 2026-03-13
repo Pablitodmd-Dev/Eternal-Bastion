@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://kc5q25ppnab1"]
 
+[ext_resource type="Texture2D" uid="uid://cuept5wb7xyfe" path="res://Assets/fields-tileset/4 Textures/brown-wooden-textured-flooring-background.jpg" id="1_2x1yp"]
 [ext_resource type="Texture2D" uid="uid://dmutfunb2lt5d" path="res://Assets/Towers/stone-tower/PNG/13.png" id="1_rtm3b"]
+[ext_resource type="Script" uid="uid://ce14kiw4sdau5" path="res://Scripts/shop_item.gd" id="2_m50t8"]
 [ext_resource type="Texture2D" uid="uid://ci23xh6hcios3" path="res://Assets/Towers/archer-towers/3 Units/1/S_Preattack.png" id="2_rtm3b"]
 [ext_resource type="Texture2D" uid="uid://dql6jibpxcnqn" path="res://Assets/Towers/archer-towers/3 Units/3/D_Preattack.png" id="3_2x1yp"]
 [ext_resource type="Texture2D" uid="uid://dn4g2cb6rp65l" path="res://Assets/Towers/stone-tower/PNG/3.png" id="4_m50t8"]
@@ -8,57 +10,59 @@
 [ext_resource type="Texture2D" uid="uid://lpbd3hvif65j" path="res://Assets/magic-and-traps/3 Lightning/1 - copia.png" id="6_dvmp3"]
 [ext_resource type="Texture2D" uid="uid://crkvy2ibdlq5f" path="res://Assets/magic-and-traps/2 Barricades/S_4_Build - copia.png" id="7_wl65j"]
 [ext_resource type="Texture2D" uid="uid://bgl0x08e8rmfw" path="res://Assets/magic-and-traps/4 Barrel/2 - copia.png" id="8_rtm3b"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wx5h"]
-bg_color = Color(0.36431465, 0.47919995, 0.47792357, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[ext_resource type="Texture2D" uid="uid://jxq5p4yptkhy" path="res://Assets/fields-tileset/4 Textures/263-2632278_bottle-chemical-elixir-health-magic-mana-potion-mana-icon-png.png" id="11_02ou5"]
+[ext_resource type="Texture2D" uid="uid://d4muchhgo0uro" path="res://Assets/fields-tileset/4 Textures/coin.png" id="12_dvmp3"]
+[ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="12_wl65j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ithhg"]
-bg_color = Color(0.3920878, 0.64247334, 0.71257895, 1)
+bg_color = Color(0.6947122, 0.52525085, 0.32043675, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+border_color = Color(0.8627451, 0.8352941, 0.07058824, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 3
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1429226809]
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1556375346]
+[node name="PanelContainer" type="TextureRect" parent="." unique_id=1994599731]
 anchors_preset = -1
 anchor_top = 0.91600007
 anchor_right = 0.71000004
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -73.568054
-offset_right = 247.07996
+offset_left = -1.0
+offset_top = -80.568054
+offset_right = 334.07996
 offset_bottom = 2.0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1wx5h")
+texture = ExtResource("1_2x1yp")
+expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1354215354]
-layout_mode = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 127.0
 theme_override_constants/separation = 28
+alignment = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=1069682579]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="Button" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer2" unique_id=574492430]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("1_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
@@ -66,11 +70,13 @@ stretch_mode = 0
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=1480776106]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer3" unique_id=1686079125]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("2_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
@@ -78,11 +84,13 @@ stretch_mode = 0
 [node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=892721958]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton2" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer4" unique_id=1168684573]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("3_2x1yp")
 ignore_texture_size = true
 stretch_mode = 0
@@ -90,11 +98,13 @@ stretch_mode = 0
 [node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=1643475146]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer5" unique_id=1871843259]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("4_m50t8")
 ignore_texture_size = true
 stretch_mode = 0
@@ -102,11 +112,13 @@ stretch_mode = 0
 [node name="PanelContainer6" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=2133126664]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer6" unique_id=978139894]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("5_02ou5")
 ignore_texture_size = true
 stretch_mode = 0
@@ -114,11 +126,13 @@ stretch_mode = 0
 [node name="PanelContainer7" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=907789967]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer7" unique_id=248564795]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("6_dvmp3")
 ignore_texture_size = true
 stretch_mode = 0
@@ -126,11 +140,13 @@ stretch_mode = 0
 [node name="PanelContainer8" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=739612553]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer8" unique_id=1882655778]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("7_wl65j")
 ignore_texture_size = true
 stretch_mode = 0
@@ -138,25 +154,76 @@ stretch_mode = 0
 [node name="PanelContainer9" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=154874060]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
+script = ExtResource("2_m50t8")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer9" unique_id=1651112289]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("8_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ManaLabel" type="Label" parent="." unique_id=1725608897]
-offset_left = 928.0
-offset_top = 539.0
-offset_right = 1030.0
-offset_bottom = 567.0
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1582962186]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -110.0
+offset_right = -7.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="FilaMana" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1080294854]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/FilaMana" unique_id=2063157511]
+layout_mode = 2
+texture = ExtResource("11_02ou5")
+expand_mode = 2
+
+[node name="ManaLabel" type="Label" parent="PanelContainer/VBoxContainer/FilaMana" unique_id=1725608897]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_wl65j")
+theme_override_font_sizes/font_size = 20
 text = "Mana: "
 
-[node name="GoldLabel" type="Label" parent="." unique_id=1094424222]
-offset_left = 928.0
-offset_top = 592.0
-offset_right = 1030.0
-offset_bottom = 620.0
+[node name="FilaOro" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1699025929]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/FilaOro" unique_id=1197037522]
+layout_mode = 2
+texture = ExtResource("12_dvmp3")
+expand_mode = 2
+
+[node name="GoldLabel" type="Label" parent="PanelContainer/VBoxContainer/FilaOro" unique_id=1094424222]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_wl65j")
+theme_override_font_sizes/font_size = 20
 text = "Gold:"
+
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer2" to="PanelContainer/HBoxContainer/PanelContainer2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer2" to="PanelContainer/HBoxContainer/PanelContainer2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer3" to="PanelContainer/HBoxContainer/PanelContainer3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer3" to="PanelContainer/HBoxContainer/PanelContainer3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer4" to="PanelContainer/HBoxContainer/PanelContainer4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer4" to="PanelContainer/HBoxContainer/PanelContainer4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer5" to="PanelContainer/HBoxContainer/PanelContainer5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer5" to="PanelContainer/HBoxContainer/PanelContainer5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer6" to="PanelContainer/HBoxContainer/PanelContainer6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer6" to="PanelContainer/HBoxContainer/PanelContainer6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer7" to="PanelContainer/HBoxContainer/PanelContainer7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer7" to="PanelContainer/HBoxContainer/PanelContainer7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer9" to="PanelContainer/HBoxContainer/PanelContainer9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer9" to="PanelContainer/HBoxContainer/PanelContainer9" method="_on_mouse_exited"]
