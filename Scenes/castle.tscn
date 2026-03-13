@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dqjtwi01pcepy"]
 
+[ext_resource type="Script" uid="uid://cismwra7f76co" path="res://Scripts/castle.gd" id="1_8ja3m"]
 [ext_resource type="Texture2D" uid="uid://dhnsf8nnyg4vp" path="res://Assets/fields-tileset/2 Objects/7 House/1.png" id="2_r1mkv"]
+[ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="3_6kyep"]
+[ext_resource type="Texture2D" uid="uid://c3qdk7k4ckf3d" path="res://Assets/health_bar/health_bar-05.png" id="3_8ja3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6e6l"]
 size = Vector2(117, 110)
 
 [node name="Castle" type="Area2D" unique_id=875019344 groups=["Castle"]]
+script = ExtResource("1_8ja3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338408877]
 texture_filter = 1
@@ -16,5 +20,15 @@ texture = ExtResource("2_r1mkv")
 position = Vector2(-0.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_p6e6l")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1248697495]
+offset_left = -117.0
+offset_top = -150.0
+offset_right = 117.0
+offset_bottom = -124.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_6kyep")
+texture_progress = ExtResource("3_8ja3m")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
