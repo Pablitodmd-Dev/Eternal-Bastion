@@ -3,11 +3,8 @@ extends Area2D
 @export var health: float = 100.0
 @export var damage: float = 5.0
 @export var speed: float = 50.0
-<<<<<<< HEAD
+
 @export var attack_speed: float = 2.0
-=======
-@export var attack_speed: float = 1.55
->>>>>>> origin/Develop
 
 var target_castle: Area2D = null
 var is_attacking: bool = false
