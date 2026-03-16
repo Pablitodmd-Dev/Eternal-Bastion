@@ -16,5 +16,11 @@
 	"cost": 100,
 	"scene_path": "res://scenes/wall.tscn",
 	"type": "structure"
+  },
+  "spike": {
+	"name": "Spikes",
+	"cost": 30,
+	"scene_path": "res://scenes/spike.tscn",
+	"type": "spell"
   }
 }

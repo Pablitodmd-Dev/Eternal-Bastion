@@ -62,11 +62,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="Button" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer2" unique_id=574492430]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer2" unique_id=574492430]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 toggle_mode = true
 texture_normal = ExtResource("1_rtm3b")
 ignore_texture_size = true
@@ -77,11 +76,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer3" unique_id=1686079125]
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer3" unique_id=1686079125]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("2_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
@@ -91,11 +89,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton2" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer4" unique_id=1168684573]
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer4" unique_id=1168684573]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("3_2x1yp")
 ignore_texture_size = true
 stretch_mode = 0
@@ -105,11 +102,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer5" unique_id=1871843259]
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer5" unique_id=1871843259]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("4_m50t8")
 ignore_texture_size = true
 stretch_mode = 0
@@ -119,11 +115,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer6" unique_id=978139894]
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer6" unique_id=978139894]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("5_02ou5")
 ignore_texture_size = true
 stretch_mode = 0
@@ -134,7 +129,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer7" unique_id=248564795]
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer7" unique_id=248564795]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -147,11 +142,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer8" unique_id=1882655778]
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer8" unique_id=1882655778]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("7_wl65j")
 ignore_texture_size = true
 stretch_mode = 0
@@ -161,11 +155,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ithhg")
 script = ExtResource("2_m50t8")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer9" unique_id=1651112289]
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer/HBoxContainer/PanelContainer9" unique_id=1651112289]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-mouse_filter = 2
 texture_normal = ExtResource("8_rtm3b")
 ignore_texture_size = true
 stretch_mode = 0
@@ -226,9 +219,10 @@ text = "Gold:"
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer5" to="PanelContainer/HBoxContainer/PanelContainer5" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer6" to="PanelContainer/HBoxContainer/PanelContainer6" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer6" to="PanelContainer/HBoxContainer/PanelContainer6" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer6/TextureButton5" to="." method="_on_texture_button_5_pressed" binds= ["spike"]]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer7" to="PanelContainer/HBoxContainer/PanelContainer7" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer7" to="PanelContainer/HBoxContainer/PanelContainer7" method="_on_mouse_exited"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer7/TextureButton3" to="." method="_on_texture_button_3_pressed" binds= ["lightning"]]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer7/TextureButton6" to="." method="_on_texture_button_6_pressed" binds= ["lightning"]]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer9" to="PanelContainer/HBoxContainer/PanelContainer9" method="_on_mouse_entered"]
