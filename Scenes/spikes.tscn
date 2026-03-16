@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c0re0eeyo2vyi"]
+
+[ext_resource type="Texture2D" uid="uid://b6oq0rtmqowgv" path="res://Assets/magic-and-traps/1 Spikes/2.png" id="1_a5dqs"]
+[ext_resource type="Script" uid="uid://3j0ndxsk4ed6" path="res://Scripts/spikes.gd" id="1_gwqs2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwqs2"]
+atlas = ExtResource("1_a5dqs")
+region = Rect2(0, 0, 192, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qgod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwqs2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvr35"]
+size = Vector2(194, 33)
+
+[node name="spikes" type="Area2D" unique_id=1380170709]
+visibility_layer = 2
+script = ExtResource("1_gwqs2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=979627624]
+sprite_frames = SubResource("SpriteFrames_0qgod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055762137]
+position = Vector2(3, 0.5)
+shape = SubResource("RectangleShape2D_qvr35")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

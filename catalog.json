@@ -1,0 +1,26 @@
+{
+  "lightning": {
+	"name": "Lightning",
+	"cost": 25,
+	"scene_path": "res://scenes/lightning.tscn",
+	"type": "spell"
+  },
+  "archer": {
+	"name": "Archer",
+	"cost": 50,
+	"scene_path": "res://scenes/archer.tscn",
+	"type": "unit"
+  },
+  "wall": {
+	"name": "Wall",
+	"cost": 100,
+	"scene_path": "res://scenes/wall.tscn",
+	"type": "structure"
+  },
+	"spike": {
+	"name": "Spikes",
+	"cost": 30,
+	"scene_path": "res://scenes/spikes.tscn",
+	"type": "spell"
+  }
+}
