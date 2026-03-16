@@ -3,7 +3,7 @@ extends Node2D
 @export var health: int = 100
 @export var damage: int = 5
 @export var speed: float = 50.0
-@export var attack_speed: float = 2
+@export var attack_speed: float = 1.55
 
 var target_castle = null
 var is_attacking: bool = false
