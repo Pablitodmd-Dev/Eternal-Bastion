@@ -1,0 +1,20 @@
+{
+  "rayo": {
+	"name": "Rayo Arcano",
+	"cost": 25,
+	"scene_path": "res://scenes/lightning.tscn",
+	"type": "spell"
+  },
+  "arquero": {
+	"name": "Arquero Real",
+	"cost": 50,
+	"scene_path": "res://scenes/archer.tscn",
+	"type": "unit"
+  },
+  "muro": {
+	"name": "Muro de Piedra",
+	"cost": 100,
+	"scene_path": "res://scenes/wall.tscn",
+	"type": "structure"
+  }
+}

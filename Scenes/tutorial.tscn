@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
-[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
-[ext_resource type="PackedScene" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
+[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
@@ -364,8 +364,6 @@ sprite_frames = SubResource("SpriteFrames_0lped")
 autoplay = "default"
 frame_progress = 0.89541
 
-[node name="CanvasLayer" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
-
 [node name="Platform1" parent="." unique_id=878360067 instance=ExtResource("9_bhfnd")]
 position = Vector2(232, 327)
 
@@ -683,3 +681,5 @@ position = Vector2(325, 402.00003)
 
 [node name="Castle" parent="." unique_id=875019344 instance=ExtResource("11_8va2t")]
 position = Vector2(1031, 335)
+
+[node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
