@@ -1,29 +1,22 @@
 extends CanvasLayer
 
-signal item_selected(item_data)
+signal item_selected(item_data: Dictionary)
 
-var catalog = {}
+var catalog: Dictionary = {}
 
 func _ready() -> void:
-	load_data()
+	load_catalog()
 
-func load_data():
+func load_catalog() -> void:
 	var file = FileAccess.open("res://catalog.json", FileAccess.READ)
 	if file:
-		var text = file.get_as_text()
-		catalog = JSON.parse_string(text)
-		print("Catálogo cargado: ", catalog.keys())
+		catalog = JSON.parse_string(file.get_as_text())
+		print("Catalog loaded: ", catalog.keys())
 
-func _on_button_pressed(id: String):
-	print("Botón presionado con ID: ", id)
-	if catalog.has(id):
-		emit_signal("item_selected", catalog[id])
-
-
-
-
-
-func _on_texture_button_3_pressed(id: String = "rayo"): 
-	print("Botón presionado: ", id)
+func _on_texture_button_3_pressed(id: String = "lightning") -> void: 
 	if catalog.has(id):
 		item_selected.emit(catalog[id])
+		
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()

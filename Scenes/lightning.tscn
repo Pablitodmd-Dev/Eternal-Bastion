@@ -85,6 +85,7 @@ animations = [{
 size = Vector2(74, 172)
 
 [node name="Area2D" type="Area2D" unique_id=1297437040]
+collision_mask = 2
 script = ExtResource("1_7ouyy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=731721927]
@@ -93,8 +94,8 @@ autoplay = "default"
 frame = 4
 frame_progress = 0.3845035
 
-[node name="Area2D" type="CollisionShape2D" parent="." unique_id=1239779647]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239779647]
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_oen0t")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -439,7 +439,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nmhp"]
 size = Vector2(28, 49)
 
-[node name="Monster1" type="Area2D" unique_id=1913571639]
+[node name="Monster1" type="Area2D" unique_id=1913571639 groups=["enemies"]]
+collision_layer = 3
 script = ExtResource("1_6nmhp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678338679]

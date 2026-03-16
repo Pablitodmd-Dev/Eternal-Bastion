@@ -1,18 +1,18 @@
 {
-  "rayo": {
-	"name": "Rayo Arcano",
+  "lightning": {
+	"name": "Lightning",
 	"cost": 25,
 	"scene_path": "res://scenes/lightning.tscn",
 	"type": "spell"
   },
-  "arquero": {
-	"name": "Arquero Real",
+  "archer": {
+	"name": "Archer",
 	"cost": 50,
 	"scene_path": "res://scenes/archer.tscn",
 	"type": "unit"
   },
-  "muro": {
-	"name": "Muro de Piedra",
+  "wall": {
+	"name": "Wall",
 	"cost": 100,
 	"scene_path": "res://scenes/wall.tscn",
 	"type": "structure"
