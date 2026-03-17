@@ -17,11 +17,14 @@ size = Vector2(117, 110)
 script = ExtResource("1_8ja3m")
 damaged_sprite = ExtResource("2_6kyep")
 destroyed_sprite = ExtResource("3_nsfh2")
+destroyed_scale = Vector2(2.5, 2.5)
+destroyed_offset_y = 55.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338408877]
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_r1mkv")
+offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122967994]
 position = Vector2(-0.5, 0)
