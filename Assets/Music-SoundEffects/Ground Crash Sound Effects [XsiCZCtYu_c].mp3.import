@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cldmhexgsfcbw"
+path="res://.godot/imported/Ground Crash Sound Effects [XsiCZCtYu_c].mp3-87a2c2349e9f05b0bd0785dab2b8c853.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Ground Crash Sound Effects [XsiCZCtYu_c].mp3"
+dest_files=["res://.godot/imported/Ground Crash Sound Effects [XsiCZCtYu_c].mp3-87a2c2349e9f05b0bd0785dab2b8c853.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
