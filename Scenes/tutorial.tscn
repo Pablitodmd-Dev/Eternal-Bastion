@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
-[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
-[ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
@@ -284,6 +284,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -4, 390, 0, 0, 0, 0, 922, 390)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enkcc"]
+size = Vector2(940, 88)
 
 [node name="Tutorial" type="Node2D" unique_id=1662794123]
 script = ExtResource("1_70gml")
@@ -667,6 +670,13 @@ curve = SubResource("Curve2D_enkcc")
 [node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("36_enkcc")]
 position = Vector2(610, 224)
 scale = Vector2(2, 2)
+
+[node name="PathArea" type="Area2D" parent="." unique_id=1747670503 groups=["Path"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathArea" unique_id=676700527]
+position = Vector2(462, 392)
+shape = SubResource("RectangleShape2D_enkcc")
+debug_color = Color(0.50766397, 0.5593974, 0.42618212, 0.41960785)
 
 [node name="Lamp4" type="Sprite2D" parent="." unique_id=379434396]
 z_index = 50
