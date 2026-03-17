@@ -3,16 +3,19 @@ extends Area2D
 @export var health: float = 100.0
 @export var damage: float = 5.0
 @export var speed: float = 50.0
-
 @export var attack_speed: float = 2.0
 
 var target_castle: Area2D = null
 var is_attacking: bool = false
 var attack_timer: float = 0.0
-
 var movement_tween: Tween 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_bar: TextureProgressBar = $HealthBar
+
+func _ready() -> void:
+	health_bar.max_value = health
+	health_bar.value = health
 
 func _process(delta: float) -> void:
 	if is_attacking:
@@ -33,6 +36,8 @@ func perform_attack() -> void:
 
 func take_damage(amount: float) -> void:
 	health -= amount
+	health_bar.value = health
+	
 	if health <= 0:
 		queue_free()
 

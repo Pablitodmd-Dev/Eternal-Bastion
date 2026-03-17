@@ -100,6 +100,8 @@
 [ext_resource type="Texture2D" uid="uid://bd7yqrmtmkt1l" path="res://Assets/Monsters/PNG/9/9_enemies_1_walk_017.png" id="98_qyflr"]
 [ext_resource type="Texture2D" uid="uid://migri8iy7p3g" path="res://Assets/Monsters/PNG/9/9_enemies_1_walk_018.png" id="99_ry0jx"]
 [ext_resource type="Texture2D" uid="uid://cht23sxj745xd" path="res://Assets/Monsters/PNG/9/9_enemies_1_walk_019.png" id="100_he6tc"]
+[ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="101_4lmex"]
+[ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="102_s0hmb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fdpnu"]
 animations = [{
@@ -429,10 +431,26 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1052448670 groups=["enemies"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnw6o"]
+size = Vector2(115, 211)
+
+[node name="Node2D" type="Area2D" unique_id=13846002 groups=["enemies"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2123908748]
 sprite_frames = SubResource("SpriteFrames_fdpnu")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.56240827
+frame_progress = 0.10282385
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012242027]
+position = Vector2(-67.5, 10.5)
+shape = SubResource("RectangleShape2D_lnw6o")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1423871060]
+offset_left = -244.0
+offset_top = -137.0
+offset_right = 465.0
+offset_bottom = -57.0
+scale = Vector2(0.5, 0.5)
+texture_under = ExtResource("101_4lmex")
+texture_progress = ExtResource("102_s0hmb")

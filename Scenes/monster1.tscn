@@ -98,7 +98,9 @@
 [ext_resource type="Texture2D" uid="uid://bcmnjqesrtbry" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_016.png" id="97_bk456"]
 [ext_resource type="Texture2D" uid="uid://cpcen85d1eyti" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_017.png" id="98_odc1l"]
 [ext_resource type="Texture2D" uid="uid://c0k4us7h1juw2" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_018.png" id="99_ltu2q"]
+[ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="100_6nmhp"]
 [ext_resource type="Texture2D" uid="uid://ffox6xh7n4qh" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_019.png" id="100_8c7m3"]
+[ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="101_k58tv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa0lp"]
 atlas = ExtResource("1_fv8n3")
@@ -453,5 +455,14 @@ frame_progress = 0.4299783
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690771051]
 position = Vector2(-16, 5.5)
 shape = SubResource("RectangleShape2D_6nmhp")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1353438697]
+offset_left = -51.0
+offset_top = -28.0
+offset_right = 658.0
+offset_bottom = 52.0
+scale = Vector2(0.1, 0.1)
+texture_under = ExtResource("100_6nmhp")
+texture_progress = ExtResource("101_k58tv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
