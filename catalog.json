@@ -11,11 +11,11 @@
 	"scene_path": "res://scenes/archer.tscn",
 	"type": "unit"
   },
-  "wall": {
-	"name": "Wall",
-	"cost": 100,
-	"scene_path": "res://scenes/wall.tscn",
-	"type": "structure"
+  "barricade": {
+	"name": "Barricade",
+	"cost": 10,
+	"scene_path": "res://scenes/barricade.tscn",
+	"type": "spell"
   },
   "spike": {
 	"name": "Spikes",

@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://btlho3rydcekg"]
+
+[ext_resource type="Texture2D" uid="uid://d1cqbo4ucyjhq" path="res://Assets/magic-and-traps/2 Barricades/S_4.png" id="1_1qjqc"]
+[ext_resource type="Script" uid="uid://wwd88nx6yefa" path="res://Scripts/barricade.gd" id="1_kt4dc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt4dc"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(180, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6t4w"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(180, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghe52"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(216, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odnwr"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(252, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkylk"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(288, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4php"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(324, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4my"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(360, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k574e"]
+atlas = ExtResource("1_1qjqc")
+region = Rect2(396, 0, 36, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfdof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt4dc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6t4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghe52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odnwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkylk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4php")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds4my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k574e")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmu5g"]
+size = Vector2(34, 66)
+
+[node name="Barricade" type="Area2D" unique_id=1616251851]
+script = ExtResource("1_kt4dc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=982618252]
+sprite_frames = SubResource("SpriteFrames_dfdof")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=81279653]
+position = Vector2(-1, 6)
+shape = SubResource("RectangleShape2D_cmu5g")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1530601469]
+offset_left = -269.0
+offset_top = 86.0
+offset_right = -230.0
+offset_bottom = 95.0
+
+[node name="SmokeParticles" type="CPUParticles2D" parent="." unique_id=687796809]
+amount = 4
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

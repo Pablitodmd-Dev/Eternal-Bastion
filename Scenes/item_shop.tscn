@@ -225,5 +225,6 @@ text = "Gold:"
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer7/TextureButton6" to="." method="_on_texture_button_6_pressed" binds= ["lightning"]]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer8" to="PanelContainer/HBoxContainer/PanelContainer8" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer8/TextureButton7" to="." method="_on_texture_button_7_pressed" binds= ["barricade"]]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer9" to="PanelContainer/HBoxContainer/PanelContainer9" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer9" to="PanelContainer/HBoxContainer/PanelContainer9" method="_on_mouse_exited"]

@@ -41,8 +41,20 @@ func take_damage(amount: float) -> void:
 	if health <= 0:
 		queue_free()
 
+func resume_movement():
+	is_attacking = false
+	target_castle = null
+	
+	var main_path = get_parent()
+	if main_path is PathFollow2D:
+		var distance_left = 1.0 - main_path.progress_ratio
+		var duration = distance_left * 20.0
+		
+		movement_tween = create_tween()
+		movement_tween.tween_property(main_path, "progress_ratio", 1.0, duration)
+
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Castle"):
+	if area.is_in_group("Castle") or area.is_in_group("allies"):
 		is_attacking = true
 		target_castle = area
 		attack_timer = attack_speed
