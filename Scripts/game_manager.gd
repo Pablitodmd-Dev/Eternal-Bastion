@@ -1,10 +1,9 @@
 extends Node2D
 
-var mana: float = 50.0
-var max_mana: float = 100.0
-var mana_regeneration_rate: float = 2.5
+@export var mana_regeneration_rate: float = 2.5
 
 @onready var mana_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaMana/ManaLabel
+@onready var gold_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaOro/GoldLabel # ¡Aquí está tu etiqueta de oro!
 @onready var shop = $ItemShop
 
 var current_pending_item = null
@@ -12,14 +11,21 @@ var scene_cache: Dictionary = {}
 var preview_indicator: Polygon2D = null
 
 func _ready() -> void:
+	# Le decimos al cerebro global que empiece de cero
+	GameManager.reset_level()
+	
 	if shop.has_signal("item_selected"):
 		shop.item_selected.connect(_on_item_selected_from_shop)
 
 func _process(delta: float) -> void:
-	if mana < max_mana:
-		mana += mana_regeneration_rate * delta
-		mana = clamp(mana, 0.0, max_mana)
-		mana_label.text = "Mana: " + str(int(mana))
+	# 1. Regeneramos el maná en el GameManager
+	if GameManager.mana < GameManager.max_mana:
+		GameManager.mana += mana_regeneration_rate * delta
+		GameManager.mana = clamp(GameManager.mana, 0.0, GameManager.max_mana)
+	
+	# 2. Actualizamos las etiquetas visuales con los datos del GameManager
+	mana_label.text = "Mana: " + str(int(GameManager.mana))
+	gold_label.text = "Oro: " + str(GameManager.coins)
 	
 	update_preview()
 
@@ -66,18 +72,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			cancel_placement()
 		elif event.button_index == MOUSE_BUTTON_LEFT:
 			var pos = get_global_mouse_position()
-			
-			if current_pending_item["type"] == "spell" and not is_on_path(pos):
-				return
-				
 			var cost = float(current_pending_item["cost"])
-			if mana >= cost:
-				spawn_item(pos)
-				mana -= cost
-				if current_pending_item["type"] == "spell":
+			
+			# Lógica de compra usando el GameManager
+			if current_pending_item["type"] == "spell":
+				if is_on_path(pos) and GameManager.mana >= cost:
+					spawn_item(pos)
+					GameManager.mana -= cost
 					cancel_placement()
-			else:
-				cancel_placement()
+			else: # Es una estructura
+				if GameManager.coins >= int(cost):
+					spawn_item(pos)
+					GameManager.coins -= int(cost)
+					cancel_placement()
 
 func is_on_path(pos: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state

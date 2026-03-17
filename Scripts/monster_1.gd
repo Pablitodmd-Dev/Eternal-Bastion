@@ -12,6 +12,7 @@ var movement_tween: Tween
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: TextureProgressBar = $HealthBar
+@export var coin_value: int = 15
 
 func _ready() -> void:
 	health_bar.max_value = health
@@ -39,6 +40,7 @@ func take_damage(amount: float) -> void:
 	health_bar.value = health
 	
 	if health <= 0:
+		GameManager.coins += coin_value
 		queue_free()
 
 func resume_movement():
