@@ -697,6 +697,8 @@ position = Vector2(325, 402.00003)
 
 [node name="Castle" parent="." unique_id=875019344 instance=ExtResource("11_8va2t")]
 position = Vector2(1031, 336)
+destroyed_scale = Vector2(2, 2)
+destroyed_offset_y = 0.0
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
 

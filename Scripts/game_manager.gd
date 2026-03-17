@@ -11,19 +11,16 @@ var scene_cache: Dictionary = {}
 var preview_indicator: Polygon2D = null
 
 func _ready() -> void:
-	# Le decimos al cerebro global que empiece de cero
 	GameManager.reset_level()
 	
 	if shop.has_signal("item_selected"):
 		shop.item_selected.connect(_on_item_selected_from_shop)
 
 func _process(delta: float) -> void:
-	# 1. Regeneramos el maná en el GameManager
 	if GameManager.mana < GameManager.max_mana:
 		GameManager.mana += mana_regeneration_rate * delta
 		GameManager.mana = clamp(GameManager.mana, 0.0, GameManager.max_mana)
 	
-	# 2. Actualizamos las etiquetas visuales con los datos del GameManager
 	mana_label.text = "Mana: " + str(int(GameManager.mana))
 	gold_label.text = "Oro: " + str(GameManager.coins)
 	
@@ -74,13 +71,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			var pos = get_global_mouse_position()
 			var cost = float(current_pending_item["cost"])
 			
-			# Lógica de compra usando el GameManager
 			if current_pending_item["type"] == "spell":
 				if is_on_path(pos) and GameManager.mana >= cost:
 					spawn_item(pos)
 					GameManager.mana -= cost
 					cancel_placement()
-			else: # Es una estructura
+			else:
 				if GameManager.coins >= int(cost):
 					spawn_item(pos)
 					GameManager.coins -= int(cost)
