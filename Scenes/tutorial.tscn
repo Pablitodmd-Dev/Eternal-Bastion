@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
-[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
-[ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
@@ -35,7 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://xs145albq7gs" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp5.png" id="32_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://bc7yklhrpx2nv" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp6.png" id="33_enkcc"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="34_cv7sw"]
+[ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="34_gyc06"]
 [ext_resource type="PackedScene" uid="uid://dm8ubav544gi2" path="res://Scenes/spawner.tscn" id="36_enkcc"]
+[ext_resource type="AudioStream" uid="uid://cwod1ffa7u56f" path="res://Assets/Music-SoundEffects/original battle bgm 12｜#戦闘曲 #musicline #bgm #作曲してみた #作曲 #レトロゲーム [cjMTUzwjJBY].mp3" id="38_gyc06"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhfnd"]
 texture = ExtResource("1_rwowx")
@@ -671,6 +673,10 @@ curve = SubResource("Curve2D_enkcc")
 position = Vector2(610, 224)
 scale = Vector2(2, 2)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=82088817]
+stream = ExtResource("34_gyc06")
+volume_db = -10.0
+
 [node name="PathArea" type="Area2D" parent="." unique_id=1747670503 groups=["Path"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathArea" unique_id=676700527]
@@ -693,3 +699,8 @@ position = Vector2(325, 402.00003)
 position = Vector2(1031, 335)
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2110885128]
+stream = ExtResource("38_gyc06")
+volume_db = -10.0
+autoplay = true

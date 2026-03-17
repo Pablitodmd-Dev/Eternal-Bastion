@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5y0sgas6k0y4"
+path="res://.godot/imported/Mettaton explode sound effect [jw6hZGYob7s].mp3-c698d263c78ea888d0b2b20850f60844.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Mettaton explode sound effect [jw6hZGYob7s].mp3"
+dest_files=["res://.godot/imported/Mettaton explode sound effect [jw6hZGYob7s].mp3-c698d263c78ea888d0b2b20850f60844.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

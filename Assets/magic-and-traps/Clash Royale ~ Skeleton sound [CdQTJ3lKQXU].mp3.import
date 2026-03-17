@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kjke2d76kyhj"
+path="res://.godot/imported/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3-814f336763bb9ff7cad0a5eef572cfb2.mp3str"
+
+[deps]
+
+source_file="res://Assets/magic-and-traps/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3"
+dest_files=["res://.godot/imported/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3-814f336763bb9ff7cad0a5eef572cfb2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

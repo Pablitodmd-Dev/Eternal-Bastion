@@ -7,6 +7,9 @@ extends Area2D
 @onready var health_bar = $TextureProgressBar
 @onready var sprite = $Sprite2D
 @onready var smoke = $SmokeParticles
+@onready var death_sound = $AudioStreamPlayer2D
+
+var is_dead: bool = false
 
 func _ready():
 	health_bar.max_value = health
@@ -15,6 +18,8 @@ func _ready():
 		smoke.emitting = false
 
 func take_damage(amount: int):
+	if is_dead: return
+	
 	health -= amount
 	health_bar.value = health
 	
@@ -37,4 +42,8 @@ func activate_damaged_state():
 		smoke.emitting = true
 
 func die():
+	is_dead = true
 	print("¡El castillo ha sido destruido!")
+	
+	if death_sound:
+		death_sound.play()
