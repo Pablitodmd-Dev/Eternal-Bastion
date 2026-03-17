@@ -19,13 +19,19 @@ func _ready() -> void:
 	
 	if anim.sprite_frames.has_animation("default"):
 		anim.play("default")
+	
+	if smoke_particles:
+		smoke_particles.emitting = false
 
 func take_damage(amount: float) -> void:
 	current_health -= amount
 	health_bar.value = current_health
 	
-	if smoke_particles:
-		smoke_particles.emitting = true
+	var health_percentage = (current_health / max_health) * 100.0
+	
+	if health_percentage <= 30.0 and smoke_particles:
+		if not smoke_particles.emitting:
+			smoke_particles.emitting = true
 	
 	if current_health <= 0:
 		die()

@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://btlho3rydcekg"]
+[gd_scene format=3 uid="uid://bg6ggoacvb44y"]
 
 [ext_resource type="Texture2D" uid="uid://d1cqbo4ucyjhq" path="res://Assets/magic-and-traps/2 Barricades/S_4.png" id="1_1qjqc"]
 [ext_resource type="Script" uid="uid://wwd88nx6yefa" path="res://Scripts/barricade.gd" id="1_kt4dc"]
+[ext_resource type="Texture2D" uid="uid://ot0u2yhw5pm5" path="res://Assets/fields-tileset/4 Textures/pixel_art.png" id="3_s0tso"]
+[ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="4_nvk8f"]
+[ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="5_d6t4w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kt4dc"]
 atlas = ExtResource("1_1qjqc")
@@ -86,13 +89,28 @@ autoplay = "default"
 position = Vector2(-1, 6)
 shape = SubResource("RectangleShape2D_cmu5g")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1530601469]
-offset_left = -269.0
-offset_top = 86.0
-offset_right = -230.0
-offset_bottom = 95.0
-
 [node name="SmokeParticles" type="CPUParticles2D" parent="." unique_id=687796809]
-amount = 4
+position = Vector2(0, -20.999998)
+scale = Vector2(0.1, 0.1)
+emitting = false
+amount = 6
+texture = ExtResource("3_s0tso")
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, -40)
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+color = Color(0.6484881, 0.6484881, 0.64848804, 1)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1530601469]
+offset_left = -34.0
+offset_top = -34.000004
+offset_right = 675.0
+offset_bottom = 45.999996
+scale = Vector2(0.1, 0.1)
+texture_under = ExtResource("4_nvk8f")
+texture_progress = ExtResource("5_d6t4w")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
