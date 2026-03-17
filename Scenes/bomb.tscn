@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://do6chiuhikr76"]
+
+[ext_resource type="Script" uid="uid://btvdc8wn8msrm" path="res://Scripts/bomb.gd" id="1_kdyat"]
+[ext_resource type="Texture2D" uid="uid://b8qol1khgwh0b" path="res://Assets/magic-and-traps/4 Barrel/1.png" id="1_yx723"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdyat"]
+atlas = ExtResource("1_yx723")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fiif"]
+atlas = ExtResource("1_yx723")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60xmw"]
+atlas = ExtResource("1_yx723")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8kb1"]
+atlas = ExtResource("1_yx723")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkuqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdyat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fiif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60xmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8kb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy8dh"]
+radius = 89.140335
+
+[node name="Bomb" type="Area2D" unique_id=1646374705]
+script = ExtResource("1_kdyat")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=797109350]
+sprite_frames = SubResource("SpriteFrames_mkuqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618753752]
+shape = SubResource("CircleShape2D_gy8dh")
+
+[node name="ExplosionTimer" type="Timer" parent="." unique_id=42576736]
+wait_time = 1.5
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=780967771]

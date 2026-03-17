@@ -13,7 +13,7 @@
   },
   "barricade": {
 	"name": "Barricade",
-	"cost": 10,
+	"cost": 70,
 	"scene_path": "res://scenes/barricade.tscn",
 	"type": "spell"
   },
@@ -21,6 +21,12 @@
 	"name": "Spikes",
 	"cost": 30,
 	"scene_path": "res://scenes/spike.tscn",
+	"type": "spell"
+  },
+  "bomb": {
+	"name": "Bomb",
+	"cost": 85,
+	"scene_path": "res://scenes/bomb.tscn",
 	"type": "spell"
   }
 }
