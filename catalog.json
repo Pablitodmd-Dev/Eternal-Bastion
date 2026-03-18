@@ -19,7 +19,7 @@
 	"cost": 50,
 	"scene_path": "res://scenes/s_archer.tscn",
 	"type": "unit",
-	"range": 100,
+	"range": 150,
 	"damage": 15,
 	"attack_rate": 2.4
   },
