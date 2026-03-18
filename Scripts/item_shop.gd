@@ -46,3 +46,21 @@ func _on_texture_button_8_pressed(id: String = "bomb") -> void:
 		var focus_owner = get_viewport().gui_get_focus_owner()
 		if focus_owner:
 			focus_owner.release_focus()	
+
+
+func _on_texture_button_3_pressed(id: String = "long_archer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+
+func _on_texture_button_2_pressed(id: String = "short_archer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	

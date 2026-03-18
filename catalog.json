@@ -5,11 +5,23 @@
 	"scene_path": "res://scenes/lightning.tscn",
 	"type": "spell"
   },
-  "archer": {
-	"name": "Archer",
+"long_archer": {
+	"name": "Long Archer",
 	"cost": 50,
-	"scene_path": "res://scenes/archer.tscn",
-	"type": "unit"
+	"scene_path": "res://scenes/l_archer.tscn",
+	"type": "unit",
+	"range": 300,
+	"damage": 15,
+	"attack_rate": 1.2
+  },
+  "short_archer": {
+	"name": "Short Archer",
+	"cost": 50,
+	"scene_path": "res://scenes/s_archer.tscn",
+	"type": "unit",
+	"range": 100,
+	"damage": 15,
+	"attack_rate": 2.4
   },
   "barricade": {
 	"name": "Barricade",

@@ -3,7 +3,7 @@ extends Node2D
 @export var mana_regeneration_rate: float = 2.5
 
 @onready var mana_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaMana/ManaLabel
-@onready var gold_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaOro/GoldLabel # ¡Aquí está tu etiqueta de oro!
+@onready var gold_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaOro/GoldLabel 
 @onready var shop = $ItemShop
 
 var current_pending_item = null
@@ -98,13 +98,18 @@ func spawn_item(pos: Vector2) -> void:
 	var path = current_pending_item["scene_path"]
 	if not scene_cache.has(path):
 		scene_cache[path] = load(path)
+	
 	var instance = scene_cache[path].instantiate()
 	
-	if current_pending_item["type"] == "structure":
+	if current_pending_item["type"] == "unit":
 		instance.position = (pos / 64).floor() * 64 + Vector2(32, 32)
 	else:
 		instance.position = pos
+		
 	add_child(instance)
+
+	if instance.has_method("setup_unit"):
+		instance.setup_unit(current_pending_item)
 
 func cancel_placement() -> void:
 	current_pending_item = null

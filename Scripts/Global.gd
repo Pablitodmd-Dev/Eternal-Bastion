@@ -5,5 +5,5 @@ var mana: float = 50.0
 var max_mana: float = 100.0
 
 func reset_level():
-	coins = 0
+	coins = 100
 	mana = 50.0
