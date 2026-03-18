@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtcc5korkqai" path="res://Assets/fields-tileset/2 Objects/4 Stone/15.png" id="31_mi3ry"]
 [ext_resource type="Texture2D" uid="uid://xs145albq7gs" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp5.png" id="32_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://bc7yklhrpx2nv" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp6.png" id="33_enkcc"]
+[ext_resource type="PackedScene" uid="uid://c6qb25wa6kcfe" path="res://Scenes/monster1.tscn" id="34_0uns8"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="34_cv7sw"]
 [ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="34_gyc06"]
 [ext_resource type="PackedScene" uid="uid://dm8ubav544gi2" path="res://Scenes/spawnerTutorial.tscn" id="36_enkcc"]
@@ -672,6 +673,7 @@ curve = SubResource("Curve2D_enkcc")
 [node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("36_enkcc")]
 position = Vector2(610, 224)
 scale = Vector2(2, 2)
+monster_scene = ExtResource("34_0uns8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=82088817]
 stream = ExtResource("34_gyc06")
