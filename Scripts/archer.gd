@@ -80,7 +80,7 @@ func disparar_flecha():
 		
 	var arrow = arrow_scene.instantiate()
 		
-	var arrow_offset = Vector2(25, 0)
+	var arrow_offset = Vector2(0, 0)
 	
 	if anim.flip_h:
 		arrow_offset.x = -25

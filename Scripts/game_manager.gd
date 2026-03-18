@@ -101,10 +101,7 @@ func spawn_item(pos: Vector2) -> void:
 	
 	var instance = scene_cache[path].instantiate()
 	
-	if current_pending_item["type"] == "unit":
-		instance.position = (pos / 64).floor() * 64 + Vector2(32, 32)
-	else:
-		instance.position = pos
+	instance.position = pos
 		
 	add_child(instance)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b74j3vwq06umb" path="res://Scripts/game_manager.gd" id="1_4iphx"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="2_vly50"]
 [ext_resource type="Texture2D" uid="uid://c06u3e600pkpk" path="res://Assets/fields-tileset/2 Objects/3 Pointer/1.png" id="3_h54da"]
-[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="3_lyd6k"]
+[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="3_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://cqma2gjmnwgoi" path="res://Scenes/WoodenFenceDecorationSmall.tscn" id="4_didp7"]
 [ext_resource type="PackedScene" uid="uid://dqjtwi01pcepy" path="res://Scenes/castle.tscn" id="4_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="5_daeh6"]
