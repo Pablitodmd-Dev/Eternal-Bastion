@@ -5,7 +5,6 @@ extends Area2D
 @export var destroyed_sprite: Texture2D 
 @export var damaged_scale: Vector2 = Vector2(1.5, 1.5) 
 @export var destroyed_scale: Vector2 = Vector2(2.0, 2.0)
-@export var destroyed_offset_y: float = 0.0 
 
 @onready var health_bar = $TextureProgressBar
 @onready var sprite = $Sprite2D
@@ -54,10 +53,18 @@ func die():
 	if is_dead: return
 	is_dead = true
 	
-	if destroyed_sprite and sprite:
+	if sprite and destroyed_sprite:
+		var current_rect = sprite.get_rect()
+		var ground_y = sprite.position.y + (current_rect.size.y * sprite.scale.y / 2)
+		
 		sprite.texture = destroyed_sprite
 		sprite.scale = destroyed_scale
-		sprite.position.y += destroyed_offset_y
+		
+		var new_rect = sprite.get_rect()
+		sprite.position.y = ground_y - (new_rect.size.y * destroyed_scale.y / 2)
+		
+		if smoke:
+			smoke.position.y = sprite.position.y + (new_rect.size.y * destroyed_scale.y / 4)
 	
 	if health_bar:
 		health_bar.hide()
