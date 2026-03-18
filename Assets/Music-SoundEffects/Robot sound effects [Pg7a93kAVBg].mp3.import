@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csrp8rtxea3i5"
+path="res://.godot/imported/Robot sound effects [Pg7a93kAVBg].mp3-01fb7b7e0fe03ff4440f2f044306c8c0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Robot sound effects [Pg7a93kAVBg].mp3"
+dest_files=["res://.godot/imported/Robot sound effects [Pg7a93kAVBg].mp3-01fb7b7e0fe03ff4440f2f044306c8c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

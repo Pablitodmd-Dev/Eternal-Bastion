@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var spawn_audio: AudioStream 
 @export var health: float = 350.0 
 @export var damage: float = 15.0  
 @export var speed: float = 30.0   

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dbf1h5qyws5gu"]
 
 [ext_resource type="Texture2D" uid="uid://dax30en8h10nf" path="res://Assets/Monsters/PNG/6/6_enemies_1_attack_000.png" id="1_evt0o"]
-[ext_resource type="Script" uid="uid://cwdkspj6a5dvn" path="res://Scenes/monster_2.gd" id="1_fjm61"]
+[ext_resource type="Script" uid="uid://cwdkspj6a5dvn" path="res://Scripts/monster_2.gd" id="1_fjm61"]
 [ext_resource type="Texture2D" uid="uid://bmpkp6nuw1k3k" path="res://Assets/Monsters/PNG/6/6_enemies_1_attack_001.png" id="2_deqok"]
+[ext_resource type="AudioStream" uid="uid://csrp8rtxea3i5" path="res://Assets/Music-SoundEffects/Robot sound effects [Pg7a93kAVBg].mp3" id="2_ukt18"]
 [ext_resource type="Texture2D" uid="uid://dx4kf5ouktbko" path="res://Assets/Monsters/PNG/6/6_enemies_1_attack_002.png" id="3_5qekk"]
 [ext_resource type="Texture2D" uid="uid://dlxpollo8oosd" path="res://Assets/Monsters/PNG/6/6_enemies_1_attack_003.png" id="4_fjm61"]
 [ext_resource type="Texture2D" uid="uid://bng6vwxd7mny5" path="res://Assets/Monsters/PNG/6/6_enemies_1_attack_004.png" id="5_ukt18"]
@@ -437,6 +438,7 @@ size = Vector2(38, 65)
 
 [node name="Monster2" type="Area2D" unique_id=993819915 groups=["enemies"]]
 script = ExtResource("1_fjm61")
+spawn_audio = ExtResource("2_ukt18")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1719293398]
 scale = Vector2(0.3, 0.3)

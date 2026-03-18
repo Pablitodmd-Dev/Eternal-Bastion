@@ -16,8 +16,13 @@ func spawn_monster() -> void:
 	
 	var monster = selected_scene.instantiate()
 	
+	# --- ESTO ES LO NUEVO ---
 	if spawn_sound:
+		# Si el monstruo tiene la variable 'spawn_audio', la usamos
+		if "spawn_audio" in monster and monster.spawn_audio != null:
+			spawn_sound.stream = monster.spawn_audio
 		spawn_sound.play()
+	# ------------------------
 	
 	if path and path.curve.get_baked_length() > 0:
 		var new_follower = PathFollow2D.new()
