@@ -25,7 +25,7 @@ func setup_unit(data: Dictionary):
 	timer.wait_time = 1.0 / attack_rate
 	timer.start()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not _is_target_valid():
 		target = _get_nearest_enemy()
 	

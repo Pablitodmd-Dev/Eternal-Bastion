@@ -46,6 +46,7 @@ radius = 89.140335
 script = ExtResource("1_kdyat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=797109350]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mkuqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618753752]

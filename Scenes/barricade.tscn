@@ -82,6 +82,7 @@ size = Vector2(34, 66)
 script = ExtResource("1_kt4dc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=982618252]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dfdof")
 autoplay = "default"
 
