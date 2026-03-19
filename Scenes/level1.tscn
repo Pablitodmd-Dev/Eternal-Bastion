@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dqjtwi01pcepy" path="res://Scenes/castle.tscn" id="4_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="5_daeh6"]
 [ext_resource type="Texture2D" uid="uid://dhisdakvrxsod" path="res://Assets/fields-tileset/2 Objects/2 Fence/1.png" id="5_didp7"]
+[ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="5_p4bhf"]
 [ext_resource type="Texture2D" uid="uid://ow1t8or5pcwh" path="res://Assets/fields-tileset/2 Objects/2 Fence/7.png" id="7_jgkgd"]
 [ext_resource type="PackedScene" uid="uid://3ptlxf0ne4vv" path="res://Scenes/spawnerLevel1.tscn" id="9_jgkgd"]
 [ext_resource type="AudioStream" uid="uid://cwod1ffa7u56f" path="res://Assets/Music-SoundEffects/original battle bgm 12｜#戦闘曲 #musicline #bgm #作曲してみた #作曲 #レトロゲーム [cjMTUzwjJBY].mp3" id="10_bs12r"]
@@ -35,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://bx7t7l4g6luo" path="res://Assets/fields-tileset/2 Objects/4 Stone/13.png" id="33_6knn8"]
 [ext_resource type="Texture2D" uid="uid://cvxt3pg5njtvj" path="res://Assets/fields-tileset/2 Objects/4 Stone/11.png" id="34_tmxcw"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="35_vb1ix"]
+[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scenes/Level1Timer.gd" id="36_dr50b"]
+[ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="37_nstho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vly50"]
 texture = ExtResource("1_4hvuo")
@@ -178,20 +181,22 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_y4dr7"]
 sources/0 = SubResource("TileSetAtlasSource_lyd6k")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4bhf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.02158781, 0.011113179, 0.004201536, 0.6039216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="Curve2D" id="Curve2D_4iphx"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -4, 390, 0, 0, 0, 0, 974, 390, 0, 0, 0, 0, 976, 678, 0, 0, 0, 0, 550, 681, 0, 0, 0, 0, 550, 636)
 }
 point_count = 5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iphx"]
-size = Vector2(1016, 88)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgkgd"]
-size = Vector2(79, 214)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs12r"]
-size = Vector2(547, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dr50b"]
 atlas = ExtResource("22_pmaet")
@@ -293,6 +298,15 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iphx"]
+size = Vector2(1016, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgkgd"]
+size = Vector2(79, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs12r"]
+size = Vector2(547, 74)
+
 [node name="Node2D" type="Node2D" unique_id=737050463]
 script = ExtResource("1_4iphx")
 
@@ -312,6 +326,40 @@ position = Vector2(35, 101)
 scale = Vector2(2, 2)
 texture = ExtResource("3_h54da")
 flip_h = true
+
+[node name="LevelTimer" type="Timer" parent="." unique_id=935572465]
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645312983]
+script = ExtResource("36_dr50b")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=112121113]
+offset_left = -1.0
+offset_top = 457.0
+offset_right = 122.0
+offset_bottom = 523.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_bottom = 9
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=592714441]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4bhf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=1523001179]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1734035227]
+layout_mode = 2
+texture = ExtResource("5_p4bhf")
+expand_mode = 2
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/HBoxContainer" unique_id=629432953]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("37_nstho")
+theme_override_font_sizes/font_size = 32
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("2_vly50")]
 
@@ -360,7 +408,7 @@ texture_filter = 1
 position = Vector2(439.99985, 187.33333)
 
 [node name="woodenWalls2" parent="woodenWalls" unique_id=469713026 instance=ExtResource("3_lyd6k")]
-z_index = 2
+z_index = 1
 position = Vector2(-0.666667, -55.333336)
 
 [node name="wooden" type="Sprite2D" parent="woodenWalls" unique_id=1059833331]
@@ -606,35 +654,6 @@ texture_filter = 1
 position = Vector2(751, 474)
 scale = Vector2(2, 2)
 texture = ExtResource("5_daeh6")
-
-[node name="Castle" parent="." unique_id=875019344 instance=ExtResource("4_y4dr7")]
-texture_filter = 1
-position = Vector2(539.00006, 333.00003)
-scale = Vector2(0.8, 0.8)
-destroyed_scale = Vector2(2, 2)
-
-[node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("9_jgkgd")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=288204945]
-stream = ExtResource("10_rqhku")
-volume_db = -10.0
-
-[node name="PathArea" type="Area2D" parent="." unique_id=1922913861 groups=["Path"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathArea" unique_id=1066301912]
-position = Vector2(508, 170)
-shape = SubResource("RectangleShape2D_4iphx")
-debug_color = Color(0.50766397, 0.5593974, 0.42618212, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PathArea" unique_id=1569819083]
-position = Vector2(975.5, 321)
-shape = SubResource("RectangleShape2D_jgkgd")
-debug_color = Color(0.505622, 0.5645771, 0.3783733, 0.41960785)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="PathArea" unique_id=839953169]
-position = Vector2(742.5, 460)
-shape = SubResource("RectangleShape2D_bs12r")
-debug_color = Color(0.49457896, 0.5678176, 0.3835739, 0.41960785)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1756585488]
 stream = ExtResource("10_bs12r")
@@ -904,3 +923,35 @@ texture_filter = 1
 position = Vector2(1124, 483)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("29_tfirt")
+
+[node name="PathArea" type="Area2D" parent="." unique_id=1922913861 groups=["Path"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathArea" unique_id=1066301912]
+position = Vector2(508, 170)
+shape = SubResource("RectangleShape2D_4iphx")
+debug_color = Color(0.50766397, 0.5593974, 0.42618212, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PathArea" unique_id=1569819083]
+position = Vector2(975.5, 321)
+shape = SubResource("RectangleShape2D_jgkgd")
+debug_color = Color(0.505622, 0.5645771, 0.3783733, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PathArea" unique_id=839953169]
+position = Vector2(742.5, 460)
+shape = SubResource("RectangleShape2D_bs12r")
+debug_color = Color(0.49457896, 0.5678176, 0.3835739, 0.41960785)
+
+[node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("9_jgkgd")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=288204945]
+stream = ExtResource("10_rqhku")
+volume_db = -10.0
+
+[node name="Castle" parent="." unique_id=875019344 instance=ExtResource("4_y4dr7")]
+z_index = 10
+texture_filter = 1
+position = Vector2(539.00006, 333.00003)
+scale = Vector2(0.8, 0.8)
+destroyed_scale = Vector2(2, 2)
+
+[connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_timer_timeout"]

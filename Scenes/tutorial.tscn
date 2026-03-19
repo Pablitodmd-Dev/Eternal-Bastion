@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b5v6m10buc1l1" path="res://Assets/fields-tileset/3 Animated Objects/1 Flag/1.png" id="5_4t6hg"]
 [ext_resource type="Texture2D" uid="uid://ba7vxukqksdon" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/1.png" id="5_hu44a"]
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="5_pkgwa"]
-[ext_resource type="PackedScene" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
-[ext_resource type="PackedScene" uid="uid://1opnnaitc0j2" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
+[ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" path="res://Scenes/Lamp.tscn" id="6_1yfkk"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="6_radxo"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6765xutj7b" path="res://Scenes/archer_tower.tscn" id="9_bhfnd"]
@@ -39,6 +39,9 @@
 [ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="34_gyc06"]
 [ext_resource type="PackedScene" uid="uid://dm8ubav544gi2" path="res://Scenes/spawnerTutorial.tscn" id="36_enkcc"]
 [ext_resource type="AudioStream" uid="uid://cwod1ffa7u56f" path="res://Assets/Music-SoundEffects/original battle bgm 12｜#戦闘曲 #musicline #bgm #作曲してみた #作曲 #レトロゲーム [cjMTUzwjJBY].mp3" id="38_gyc06"]
+[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scenes/Level1Timer.gd" id="40_dtmgi"]
+[ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="41_ilalk"]
+[ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="42_b3wap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyc06"]
 texture = ExtResource("1_rwowx")
@@ -290,6 +293,17 @@ point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enkcc"]
 size = Vector2(940, 88)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1qrx"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.02158781, 0.011113179, 0.004201536, 0.6039216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Tutorial" type="Node2D" unique_id=1662794123]
 script = ExtResource("1_70gml")
@@ -707,3 +721,37 @@ destroyed_scale = Vector2(2, 2)
 stream = ExtResource("38_gyc06")
 volume_db = -10.0
 autoplay = true
+
+[node name="LevelTimer" type="Timer" parent="." unique_id=340737180]
+wait_time = 240.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1213035795]
+script = ExtResource("40_dtmgi")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=572994559]
+offset_left = -1.0
+offset_top = 457.0
+offset_right = 122.0
+offset_bottom = 523.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_bottom = 9
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=1748388382]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1qrx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=662088573]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1921116684]
+layout_mode = 2
+texture = ExtResource("41_ilalk")
+expand_mode = 2
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1635545694]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("42_b3wap")
+theme_override_font_sizes/font_size = 32
