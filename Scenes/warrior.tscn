@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dsv8qu7aklune"]
+
+[ext_resource type="Script" uid="uid://btp4fm6w8wjlv" path="res://Scripts/warrior.gd" id="1_y244l"]
+[ext_resource type="PackedScene" uid="uid://d0wdkk5x88rbl" path="res://Scenes/slash.tscn" id="2_oc4p7"]
+[ext_resource type="Texture2D" uid="uid://dwd6nkmdit6ro" path="res://Assets/defenses/warrior/Warrior_Attack1.png" id="3_2hvn2"]
+[ext_resource type="Texture2D" uid="uid://v44hdc3d0y8b" path="res://Assets/defenses/warrior/Warrior_Idle.png" id="4_0oy5h"]
+[ext_resource type="Script" uid="uid://tghmfjaytgxv" path="res://Scripts/range_display.gd" id="5_oc4p7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neue4"]
+atlas = ExtResource("3_2hvn2")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgxqe"]
+atlas = ExtResource("3_2hvn2")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38osx"]
+atlas = ExtResource("3_2hvn2")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0usby"]
+atlas = ExtResource("3_2hvn2")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbesr"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erwpa"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4voqm"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g70ed"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81xly"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd1cw"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmvn0"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvv4p"]
+atlas = ExtResource("4_0oy5h")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsjin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neue4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgxqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38osx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0usby")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbesr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erwpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4voqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g70ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81xly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd1cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmvn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvv4p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ea8ps"]
+
+[node name="Warrior" type="Area2D" unique_id=545233448]
+script = ExtResource("1_y244l")
+slash_scene = ExtResource("2_oc4p7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=558563893]
+position = Vector2(1.0000005, -9.536743e-07)
+scale = Vector2(0.5234375, 0.5963542)
+sprite_frames = SubResource("SpriteFrames_lsjin")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1546061298]
+shape = SubResource("CircleShape2D_ea8ps")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=165905997]
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1667768090]
+
+[node name="RangeIndicator" type="Node2D" parent="." unique_id=637797645]
+script = ExtResource("5_oc4p7")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

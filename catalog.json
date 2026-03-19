@@ -49,5 +49,14 @@
 	"range": 100,
 	"damage": 15,
 	"attack_rate": 1.5
-}
+},
+"warrior": {
+	"name": "Warrior Slash",
+	"cost": 75,
+	"scene_path": "res://scenes/warrior.tscn",
+	"type": "unit",
+	"range": 150,
+	"damage": 35,
+	"attack_rate": 0.8
+  }
 }

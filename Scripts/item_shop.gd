@@ -74,3 +74,20 @@ func _on_texture_button_pressed(id: String = "lancer") -> void:
 			var focus_owner = get_viewport().gui_get_focus_owner()
 			if focus_owner:
 				focus_owner.release_focus()	
+
+
+func _on_texture_button_4_pressed(id: String = "warrior") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+func buy(id):
+	if catalog.has(id):
+		item_selected.emit(catalog[id])
+	
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()	
