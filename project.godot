@@ -15,10 +15,15 @@ run/main_scene="uid://cdfoc74l56doh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://cwmglg3b0fhi5"
+
 [global_group]
 
 Castle=""
 enemies=""
+Path=""
 
 [physics]
 

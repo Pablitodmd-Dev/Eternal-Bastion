@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dv2d8s8oi40vv" path="res://Scripts/monster_1.gd" id="1_6nmhp"]
 [ext_resource type="Texture2D" uid="uid://lhrybj1rpmf8" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_000.png" id="1_fv8n3"]
 [ext_resource type="Texture2D" uid="uid://d2oplonim3dk5" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_000.png" id="1_hphb8"]
+[ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="2_k58tv"]
 [ext_resource type="Texture2D" uid="uid://dxfsgagocoeuo" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_001.png" id="2_n104q"]
 [ext_resource type="Texture2D" uid="uid://b8x4j76bk8yaj" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_001.png" id="2_uevo2"]
 [ext_resource type="Texture2D" uid="uid://bg3aykxabhkfh" path="res://Assets/Monsters/PNG/3/3_enemies_1_attack_002.png" id="3_phptb"]
@@ -98,7 +99,9 @@
 [ext_resource type="Texture2D" uid="uid://bcmnjqesrtbry" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_016.png" id="97_bk456"]
 [ext_resource type="Texture2D" uid="uid://cpcen85d1eyti" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_017.png" id="98_odc1l"]
 [ext_resource type="Texture2D" uid="uid://c0k4us7h1juw2" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_018.png" id="99_ltu2q"]
+[ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="100_6nmhp"]
 [ext_resource type="Texture2D" uid="uid://ffox6xh7n4qh" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_019.png" id="100_8c7m3"]
+[ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="101_k58tv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa0lp"]
 atlas = ExtResource("1_fv8n3")
@@ -442,6 +445,7 @@ size = Vector2(28, 49)
 [node name="Monster1" type="Area2D" unique_id=1913571639 groups=["enemies"]]
 collision_layer = 3
 script = ExtResource("1_6nmhp")
+spawn_audio = ExtResource("2_k58tv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678338679]
 scale = Vector2(0.24169053, 0.22216494)
@@ -453,5 +457,14 @@ frame_progress = 0.4299783
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690771051]
 position = Vector2(-16, 5.5)
 shape = SubResource("RectangleShape2D_6nmhp")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1353438697]
+offset_left = -51.0
+offset_top = -28.0
+offset_right = 658.0
+offset_bottom = 52.0
+scale = Vector2(0.1, 0.1)
+texture_under = ExtResource("100_6nmhp")
+texture_progress = ExtResource("101_k58tv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

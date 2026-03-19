@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://3ptlxf0ne4vv"]
+
+[ext_resource type="Script" uid="uid://dpibdmgnvt2iy" path="res://Scripts/spawner_level_1.gd" id="1_5dkhy"]
+[ext_resource type="PackedScene" uid="uid://c6qb25wa6kcfe" path="res://Scenes/monster1.tscn" id="2_f6p06"]
+[ext_resource type="PackedScene" uid="uid://dbf1h5qyws5gu" path="res://Scenes/monster2.tscn" id="3_f6p06"]
+
+[node name="Spawner" type="Node2D" unique_id=1872733021]
+script = ExtResource("1_5dkhy")
+monster_scenes = Array[PackedScene]([ExtResource("2_f6p06"), ExtResource("3_f6p06")])
+
+[node name="Timer" type="Timer" parent="." unique_id=575361919]
+wait_time = 8.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

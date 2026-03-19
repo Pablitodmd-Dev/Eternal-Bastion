@@ -5,16 +5,58 @@
 	"scene_path": "res://scenes/lightning.tscn",
 	"type": "spell"
   },
-  "archer": {
-	"name": "Archer",
+"long_archer": {
+	"name": "Long Archer",
 	"cost": 50,
-	"scene_path": "res://scenes/archer.tscn",
-	"type": "unit"
+	"scene_path": "res://scenes/l_archer.tscn",
+	"type": "unit",
+	"range": 300,
+	"damage": 5,
+	"attack_rate": 1.2
   },
-  "wall": {
-	"name": "Wall",
-	"cost": 100,
-	"scene_path": "res://scenes/wall.tscn",
-	"type": "structure"
+  "short_archer": {
+	"name": "Short Archer",
+	"cost": 50,
+	"scene_path": "res://scenes/s_archer.tscn",
+	"type": "unit",
+	"range": 150,
+	"damage": 5,
+	"attack_rate": 2.4
+  },
+  "barricade": {
+	"name": "Barricade",
+	"cost": 70,
+	"scene_path": "res://scenes/barricade.tscn",
+	"type": "spell"
+  },
+  "spike": {
+	"name": "Spikes",
+	"cost": 30,
+	"scene_path": "res://scenes/spike.tscn",
+	"type": "spell"
+  },
+  "bomb": {
+	"name": "Bomb",
+	"cost": 85,
+	"scene_path": "res://scenes/bomb.tscn",
+	"type": "spell"
+  },
+"lancer": {
+	"name": "Lancer",
+	"cost": 60,
+	"scene_path": "res://scenes/lancer.tscn",
+	"type": "unit",
+	"range": 100,
+	"damage": 15,
+	"attack_rate": 1.5
+},
+"warrior": {
+	"name": "Warrior Slash",
+	"cost": 75,
+	"scene_path": "res://scenes/warrior.tscn",
+	"type": "unit",
+	"range": 150,
+	"damage": 35,
+	"attack_rate": 0.8
   }
 }

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b178avw3kfj01"]
+
+[ext_resource type="Texture2D" uid="uid://cuept5wb7xyfe" path="res://Assets/fields-tileset/4 Textures/brown-wooden-textured-flooring-background.jpg" id="1_ey1tb"]
+[ext_resource type="Texture2D" uid="uid://cf3a0e5ok0dxo" path="res://Assets/fields-tileset/5 MenusImages/PauseText.png" id="1_lj4oq"]
+[ext_resource type="Script" uid="uid://bkhrbanaebu31" path="res://Scripts/pause_menu.gd" id="1_siy43"]
+[ext_resource type="Texture2D" uid="uid://bb57ump7ti1s" path="res://Assets/fields-tileset/5 MenusImages/ResumeText.png" id="2_5w4ur"]
+[ext_resource type="Texture2D" uid="uid://dvc1q8xu02r8c" path="res://Assets/fields-tileset/5 MenusImages/ExitText.png" id="3_ey1tb"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=39881827]
+process_mode = 3
+script = ExtResource("1_siy43")
+
+[node name="BackGround" type="ColorRect" parent="." unique_id=1922453421]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7490196)
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=104328484]
+texture_filter = 1
+offset_left = 381.0
+offset_top = 62.0
+offset_right = 768.0
+offset_bottom = 581.0
+texture = ExtResource("1_ey1tb")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Panel" unique_id=2085846835]
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 519.0
+border_color = Color(0.8785746, 0.94024825, 2.3102762e-06, 1)
+border_width = 3.0
+editor_only = false
+
+[node name="PauseText" type="TextureRect" parent="Panel" unique_id=1807486863]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -136.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lj4oq")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="ResumeButton" type="TextureButton" parent="Panel" unique_id=1388782663]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -53.5
+offset_right = 159.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_5w4ur")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ExitButton" type="TextureButton" parent="Panel" unique_id=1240234786]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 75.5
+offset_right = 150.0
+offset_bottom = 190.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ey1tb")
+ignore_texture_size = true
+stretch_mode = 3
+
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

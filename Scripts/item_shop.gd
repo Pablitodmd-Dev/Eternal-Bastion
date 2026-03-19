@@ -13,10 +13,81 @@ func load_catalog() -> void:
 		catalog = JSON.parse_string(file.get_as_text())
 		print("Catalog loaded: ", catalog.keys())
 
-func _on_texture_button_3_pressed(id: String = "lightning") -> void: 
+func _on_texture_button_6_pressed(id: String = "lightning") -> void: 
 	if catalog.has(id):
 		item_selected.emit(catalog[id])
 		
 		var focus_owner = get_viewport().gui_get_focus_owner()
 		if focus_owner:
 			focus_owner.release_focus()
+
+
+func _on_texture_button_5_pressed(id: String = "spike") -> void:
+	if catalog.has(id):
+		item_selected.emit(catalog[id])
+	
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()
+
+
+func _on_texture_button_7_pressed(id: String = "barricade") -> void:
+	if catalog.has(id):
+		item_selected.emit(catalog[id])
+	
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()
+
+func _on_texture_button_8_pressed(id: String = "bomb") -> void:
+	if catalog.has(id):
+		item_selected.emit(catalog[id])
+	
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()	
+
+
+func _on_texture_button_3_pressed(id: String = "long_archer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+
+func _on_texture_button_2_pressed(id: String = "short_archer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+
+
+func _on_texture_button_pressed(id: String = "lancer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+
+func _on_texture_button_4_pressed(id: String = "warrior") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	
+
+func buy(id):
+	if catalog.has(id):
+		item_selected.emit(catalog[id])
+	
+		var focus_owner = get_viewport().gui_get_focus_owner()
+		if focus_owner:
+			focus_owner.release_focus()	

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bsyw80bwwnpqx"]
+
+[ext_resource type="Texture2D" uid="uid://cpf53h6umr8rp" path="res://Assets/fields-tileset/2 Objects/2 Fence/9.png" id="1_v842x"]
+
+[node name="9" type="Sprite2D" unique_id=1042192975]
+texture_filter = 1
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="." unique_id=1075926325]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9" unique_id=349760766]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9" unique_id=529819728]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9" unique_id=1735453289]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9" unique_id=486290472]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9" unique_id=681718395]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9" unique_id=1473243001]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9" unique_id=858739577]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9" unique_id=1105964865]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9" unique_id=412564501]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9" unique_id=1532011146]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9" unique_id=1859973067]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9" unique_id=291793324]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=2100739221]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=389653451]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=1915061249]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=972824369]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=1151706141]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=117778028]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=117855325]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=1408972775]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=1225544844]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
+
+[node name="9" type="Sprite2D" parent="9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9/9" unique_id=430839047]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_v842x")
