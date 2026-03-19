@@ -40,7 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="34_gyc06"]
 [ext_resource type="PackedScene" uid="uid://dm8ubav544gi2" path="res://Scenes/spawnerTutorial.tscn" id="36_enkcc"]
 [ext_resource type="AudioStream" uid="uid://cwod1ffa7u56f" path="res://Assets/Music-SoundEffects/original battle bgm 12｜#戦闘曲 #musicline #bgm #作曲してみた #作曲 #レトロゲーム [cjMTUzwjJBY].mp3" id="38_gyc06"]
-[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scenes/Level1Timer.gd" id="40_dtmgi"]
+[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="40_dtmgi"]
 [ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="41_ilalk"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="42_b3wap"]
 

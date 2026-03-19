@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cicllsghvnsw2"
+path="res://.godot/imported/Warrior's Way _ Battle OST - 01 - Title [98ByT4m1AOU].mp3-dc181cceb2dc2b8ea01aa9bc993548c5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Warrior's Way _ Battle OST - 01 - Title [98ByT4m1AOU].mp3"
+dest_files=["res://.godot/imported/Warrior's Way _ Battle OST - 01 - Title [98ByT4m1AOU].mp3-dc181cceb2dc2b8ea01aa9bc993548c5.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

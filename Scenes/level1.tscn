@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bx7t7l4g6luo" path="res://Assets/fields-tileset/2 Objects/4 Stone/13.png" id="33_6knn8"]
 [ext_resource type="Texture2D" uid="uid://cvxt3pg5njtvj" path="res://Assets/fields-tileset/2 Objects/4 Stone/11.png" id="34_tmxcw"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="35_vb1ix"]
-[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scenes/Level1Timer.gd" id="36_dr50b"]
+[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="36_dr50b"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="37_nstho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vly50"]
