@@ -64,3 +64,13 @@ func _on_texture_button_2_pressed(id: String = "short_archer") -> void:
 			var focus_owner = get_viewport().gui_get_focus_owner()
 			if focus_owner:
 				focus_owner.release_focus()	
+
+
+
+func _on_texture_button_pressed(id: String = "lancer") -> void:
+		if catalog.has(id):
+			item_selected.emit(catalog[id])
+	
+			var focus_owner = get_viewport().gui_get_focus_owner()
+			if focus_owner:
+				focus_owner.release_focus()	

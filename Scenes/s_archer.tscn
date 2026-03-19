@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djo5bex7xqkjt" path="res://Scenes/arrow.tscn" id="2_8ps3r"]
 [ext_resource type="Texture2D" uid="uid://ny6do67vpfe5" path="res://Assets/Towers/archer-towers/3 Units/2/D_Attack.png" id="2_tcb25"]
 [ext_resource type="Texture2D" uid="uid://cbs4y06ei0h4b" path="res://Assets/Towers/archer-towers/3 Units/2/D_Idle.png" id="3_8ps3r"]
+[ext_resource type="Script" uid="uid://tghmfjaytgxv" path="res://Scripts/range_display.gd" id="5_k11pf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k11pf"]
 atlas = ExtResource("2_tcb25")
@@ -106,5 +107,8 @@ position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_r5gth")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1750299186]
+
+[node name="RangeIndicator" type="Node2D" parent="." unique_id=2020029259]
+script = ExtResource("5_k11pf")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkog6627o45t5" path="res://Scripts/item_shop.gd" id="1_1wx5h"]
 [ext_resource type="Texture2D" uid="uid://cuept5wb7xyfe" path="res://Assets/fields-tileset/4 Textures/brown-wooden-textured-flooring-background.jpg" id="1_2x1yp"]
-[ext_resource type="Texture2D" uid="uid://dmutfunb2lt5d" path="res://Assets/Towers/stone-tower/PNG/13.png" id="1_rtm3b"]
+[ext_resource type="Texture2D" uid="uid://clge0r6nfrw1o" path="res://Assets/defenses/Lancer_Idle_profile.png" id="3_wl65j"]
 [ext_resource type="Texture2D" uid="uid://dn4g2cb6rp65l" path="res://Assets/Towers/stone-tower/PNG/3.png" id="4_m50t8"]
 [ext_resource type="Texture2D" uid="uid://bqknx872n6d6n" path="res://Assets/Towers/archer-towers/3 Units/2/D_Preattack.png" id="4_wl65j"]
 [ext_resource type="Texture2D" uid="uid://drroajkrin5h0" path="res://Assets/Towers/archer-towers/3 Units/1/D_Preattack.png" id="5_1wx5h"]
@@ -65,7 +65,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1_rtm3b")
+texture_normal = ExtResource("3_wl65j")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -202,6 +202,7 @@ text = "Gold:"
 
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer2" to="PanelContainer/HBoxContainer/PanelContainer2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer2" to="PanelContainer/HBoxContainer/PanelContainer2" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer2/TextureButton" to="." method="_on_texture_button_pressed" binds= ["lancer"]]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PanelContainer3" to="PanelContainer/HBoxContainer/PanelContainer3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/HBoxContainer/PanelContainer3" to="PanelContainer/HBoxContainer/PanelContainer3" method="_on_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PanelContainer3/TextureButton2" to="." method="_on_texture_button_2_pressed" binds= ["short_archer"]]
