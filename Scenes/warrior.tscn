@@ -121,8 +121,10 @@ shape = SubResource("CircleShape2D_ea8ps")
 [node name="AttackTimer" type="Timer" parent="." unique_id=165905997]
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1667768090]
+position = Vector2(1, 26)
 
 [node name="RangeIndicator" type="Node2D" parent="." unique_id=637797645]
+position = Vector2(0, 1)
 script = ExtResource("5_oc4p7")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

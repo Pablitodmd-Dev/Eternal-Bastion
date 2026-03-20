@@ -7,17 +7,19 @@ var direction: Vector2 = Vector2.RIGHT
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	await get_tree().create_timer(1.5).timeout
+	print("¡He aparecido en la posición: ", global_position)
+	await get_tree().create_timer(5).timeout
 	queue_free()
 
 func setup_projectile(dm: float, dir: Vector2):
 	damage = dm
 	direction = dir.normalized()
-	
 	rotation = direction.angle()
 	
-	if anim:
-		anim.play("fly")
+	#if anim == null:
+	#	anim = $AnimatedSprite2D
+	
+	#anim.play("slash")
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
