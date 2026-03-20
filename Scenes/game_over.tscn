@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://d4keffnqr3ssd" path="res://Scripts/game_over.gd" id="1_eoghk"]
 [ext_resource type="Texture2D" uid="uid://bgeyb5yog2e7l" path="res://Assets/fields-tileset/5 MenusImages/game_over_text-removebg-preview.png" id="2_eoghk"]
 [ext_resource type="Texture2D" uid="uid://dvc1q8xu02r8c" path="res://Assets/fields-tileset/5 MenusImages/ExitText.png" id="3_14u15"]
+[ext_resource type="AudioStream" uid="uid://b6fm273lqgsha" path="res://Assets/Music-SoundEffects/Game Over.ogg" id="5_14u15"]
+[ext_resource type="Texture2D" uid="uid://dr4yvd73ri6ff" path="res://Assets/fields-tileset/5 MenusImages/retry.png" id="5_j3ryr"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=992089096]
 script = ExtResource("1_eoghk")
@@ -23,25 +25,44 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -487.25
-offset_top = -258.25
+offset_top = -416.25
 offset_right = 487.25
-offset_bottom = 258.25
+offset_bottom = 100.25
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_eoghk")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1803795108]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -338.5
-offset_top = -290.0
-offset_right = 338.5
-offset_bottom = 79.0
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -33.5
+offset_right = 347.5
+offset_bottom = 335.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 texture_normal = ExtResource("3_14u15")
 
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1880141028]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = -184.5
+offset_right = 338.5
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_j3ryr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=994340011]
+stream = ExtResource("5_14u15")
+autoplay = true
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
