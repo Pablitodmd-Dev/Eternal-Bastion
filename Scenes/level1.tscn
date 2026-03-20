@@ -195,7 +195,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Curve2D" id="Curve2D_4iphx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4, 390, 0, 0, 0, 0, 974, 390, 0, 0, 0, 0, 976, 678, 0, 0, 0, 0, 550, 681, 0, 0, 0, 0, 550, 636)
+"points": PackedVector2Array(0, 0, 0, 0, -4, 390, 0, 0, 0, 0, 980, 390, 0, 0, 0, 0, 982, 677, 0, 0, 0, 0, 554, 673, 0, 0, 0, 0, 544, 624)
 }
 point_count = 5
 
@@ -306,7 +306,7 @@ size = Vector2(1016, 88)
 size = Vector2(79, 214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs12r"]
-size = Vector2(547, 74)
+size = Vector2(547, 94)
 
 [node name="Node2D" type="Node2D" unique_id=737050463]
 script = ExtResource("1_4iphx")
@@ -314,6 +314,7 @@ script = ExtResource("1_4iphx")
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("2_vly50")]
 
 [node name="CanvasLayer2" parent="." unique_id=39881827 instance=ExtResource("3_tfirt")]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=2046742800]
 position = Vector2(8, -3)
@@ -764,7 +765,8 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_fg80b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432083887]
-position = Vector2(451, 395)
+z_index = 20
+position = Vector2(462, 393)
 sprite_frames = SubResource("SpriteFrames_6knn8")
 frame_progress = 0.5635637
 
@@ -940,11 +942,12 @@ shape = SubResource("RectangleShape2D_jgkgd")
 debug_color = Color(0.505622, 0.5645771, 0.3783733, 0.41960785)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="PathArea" unique_id=839953169]
-position = Vector2(742.5, 460)
+position = Vector2(742.5, 450)
 shape = SubResource("RectangleShape2D_bs12r")
 debug_color = Color(0.49457896, 0.5678176, 0.3835739, 0.41960785)
 
 [node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("9_jgkgd")]
+z_index = 50
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=288204945]
 stream = ExtResource("10_rqhku")
@@ -953,7 +956,7 @@ volume_db = -10.0
 [node name="Castle" parent="." unique_id=875019344 instance=ExtResource("4_y4dr7")]
 z_index = 10
 texture_filter = 1
-position = Vector2(539.00006, 333.00003)
+position = Vector2(539, 316)
 scale = Vector2(0.8, 0.8)
 destroyed_scale = Vector2(2, 2)
 

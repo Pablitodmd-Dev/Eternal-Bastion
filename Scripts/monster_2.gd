@@ -11,16 +11,28 @@ var target_castle: Area2D = null
 var is_attacking: bool = false
 var attack_timer: float = 0.0
 var movement_tween: Tween 
+var last_x: float = 0.0
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var health_bar: TextureProgressBar = $HealthBar
+# Referencias actualizadas al contenedor Visuals
+@onready var visuals: Node2D = $Visuals
+@onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
+@onready var health_bar: TextureProgressBar = $Visuals/HealthBar
 
 func _ready() -> void:
 	health_bar.max_value = health
 	health_bar.value = health
 	sprite.play("Walk")
+	last_x = global_position.x
 
 func _process(delta: float) -> void:
+	# Lógica de volteo (Flip) usando el contenedor Visuals
+	if not is_attacking:
+		if global_position.x < last_x - 0.1: # Se mueve a la izquierda
+			visuals.scale.x = -1 # Esto voltea al bicho Y a la barra
+		elif global_position.x > last_x + 0.1: # Se mueve a la derecha
+			visuals.scale.x = 1
+		last_x = global_position.x
+
 	if is_attacking:
 		if sprite.animation != "Attack":
 			sprite.play("Attack")
@@ -63,6 +75,7 @@ func resume_movement():
 		
 		movement_tween = create_tween()
 		movement_tween.tween_property(main_path, "progress_ratio", 1.0, duration)
+		last_x = global_position.x
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Castle") or area.is_in_group("allies"):
