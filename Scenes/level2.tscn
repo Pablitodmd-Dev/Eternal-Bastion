@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b74j3vwq06umb" path="res://Scripts/game_manager.gd" id="1_fpxdy"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="2_uv1om"]
-[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="3_1g7bq"]
+[ext_resource type="PackedScene" uid="uid://b178avw3kfj01" path="res://Scenes/PauseMenu.tscn" id="3_1g7bq"]
 [ext_resource type="Texture2D" uid="uid://ca5kra51hrmdj" path="res://Assets/fields-tileset/1 Tiles/FieldsTileset.png" id="4_7xh8u"]
 [ext_resource type="Texture2D" uid="uid://c06u3e600pkpk" path="res://Assets/fields-tileset/2 Objects/3 Pointer/1.png" id="5_18ouw"]
-[ext_resource type="Script" path="res://Scripts/Level1Timer.gd" id="6_7l1c6"]
+[ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="6_7l1c6"]
 [ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="7_ne4o0"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="8_em72g"]
 [ext_resource type="Texture2D" uid="uid://345arewl107v" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp1.png" id="9_cfko8"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dtq7xn2xn20n6" path="res://Assets/fields-tileset/2 Objects/7 Decor/Tree2.png" id="18_1wy62"]
 [ext_resource type="Texture2D" uid="uid://dp68fiwd7f05u" path="res://Assets/fields-tileset/2 Objects/6 Tent/2.png" id="19_s0beo"]
 [ext_resource type="Texture2D" uid="uid://ct8xvd5lul7wd" path="res://Assets/fields-tileset/2 Objects/7 Decor/Box2.png" id="20_2d4tt"]
-[ext_resource type="Texture2D" uid="uid://crlk7f70n8mkm" path="res://Assets/fields-tileset/2 Objects/7 Decor/Lamp2.png" id="21_acsch"]
 [ext_resource type="Texture2D" uid="uid://dkn83jea1dmft" path="res://Assets/fields-tileset/2 Objects/7 Decor/Log2.png" id="22_h5iao"]
 [ext_resource type="Texture2D" uid="uid://b4kone03lfr1g" path="res://Assets/fields-tileset/2 Objects/7 Decor/Log1.png" id="23_76pin"]
 [ext_resource type="Texture2D" uid="uid://btw45lo6jv4mj" path="res://Assets/fields-tileset/2 Objects/8 Camp/2.png" id="25_wyur2"]
@@ -28,9 +27,14 @@
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="30_opnaa"]
 [ext_resource type="Texture2D" uid="uid://mocrym4jlkxc" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/2.png" id="31_t6ojf"]
 [ext_resource type="Texture2D" uid="uid://c38qdjhooya8d" path="res://Assets/fields-tileset/2 Objects/9 Bush/1.png" id="32_b54i3"]
+[ext_resource type="Script" uid="uid://b8enue40eg0lg" path="res://Scripts/spawner_level_2.gd" id="33_fpxdy"]
 [ext_resource type="Texture2D" uid="uid://bx7t7l4g6luo" path="res://Assets/fields-tileset/2 Objects/4 Stone/13.png" id="34_jhjok"]
+[ext_resource type="PackedScene" uid="uid://c6qb25wa6kcfe" path="res://Scenes/monster1.tscn" id="34_uv1om"]
+[ext_resource type="PackedScene" uid="uid://dbf1h5qyws5gu" path="res://Scenes/monster2.tscn" id="35_1g7bq"]
 [ext_resource type="Texture2D" uid="uid://cvxt3pg5njtvj" path="res://Assets/fields-tileset/2 Objects/4 Stone/11.png" id="35_mmi7f"]
+[ext_resource type="PackedScene" uid="uid://f15u7uhg4mr7" path="res://Scenes/monster3.tscn" id="36_7xh8u"]
 [ext_resource type="Texture2D" uid="uid://dxfxx6d671t7n" path="res://Assets/fields-tileset/2 Objects/4 Stone/8.png" id="36_ahrxo"]
+[ext_resource type="PackedScene" uid="uid://oo4b5esh3oik" path="res://Scenes/monster4.tscn" id="37_18ouw"]
 [ext_resource type="PackedScene" uid="uid://3ptlxf0ne4vv" path="res://Scenes/spawnerLevel1.tscn" id="37_gbjkv"]
 [ext_resource type="AudioStream" uid="uid://uruvhq1csqpy" path="res://Assets/Music-SoundEffects/Clash Royale ~ Skeleton sound [CdQTJ3lKQXU].mp3" id="38_xtl37"]
 [ext_resource type="PackedScene" uid="uid://dqjtwi01pcepy" path="res://Scenes/castle.tscn" id="39_c3jd3"]
@@ -190,7 +194,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Curve2D" id="Curve2D_4iphx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -47, 614, 0, 0, 0, 0, 286, 613, 0, 0, 0, 0, 315, 358, 0, 0, 0, 0, 521, 358, 0, 0, 0, 0, 537, 617, 0, 0, 0, 0, 717, 615, 0, 0, 0, 0, 731, 368, 0, 0, 0, 0, 992, 368)
+"points": PackedVector2Array(0, 0, 0, 0, -47, 614, 0, 0, 0, 0, 285, 597, 0, 0, 0, 0, 315, 358, 0, 0, 0, 0, 521, 358, 0, 0, 0, 0, 537, 617, 0, 0, 0, 0, 717, 615, 0, 0, 0, 0, 731, 368, 0, 0, 0, 0, 992, 368)
 }
 point_count = 8
 
@@ -385,12 +389,6 @@ texture = ExtResource("9_cfko8")
 z_index = 3
 texture_filter = 1
 position = Vector2(245, 223)
-scale = Vector2(2, 2)
-texture = ExtResource("9_cfko8")
-
-[node name="Lamp13" type="Sprite2D" parent="." unique_id=182955142]
-texture_filter = 1
-position = Vector2(6, 733)
 scale = Vector2(2, 2)
 texture = ExtResource("9_cfko8")
 
@@ -607,13 +605,6 @@ position = Vector2(155, 415)
 scale = Vector2(2, 2)
 texture = ExtResource("9_cfko8")
 
-[node name="Lamp14" type="Sprite2D" parent="." unique_id=658940072]
-z_index = 10
-texture_filter = 1
-position = Vector2(-57, 815)
-scale = Vector2(2, 2)
-texture = ExtResource("9_cfko8")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1756585488]
 stream = ExtResource("13_d87oc")
 volume_db = -15.0
@@ -654,12 +645,6 @@ texture_filter = 1
 position = Vector2(1021, 301)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_2d4tt")
-
-[node name="Lamp2" type="Sprite2D" parent="." unique_id=1132700395]
-texture_filter = 1
-position = Vector2(-26, 650)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("21_acsch")
 
 [node name="Log2" type="Sprite2D" parent="." unique_id=1848309883]
 texture_filter = 1
@@ -718,14 +703,14 @@ z_index = 20
 texture_filter = 1
 position = Vector2(955, 180)
 sprite_frames = SubResource("SpriteFrames_6knn8")
-frame_progress = 0.371775
+frame_progress = 0.22575285
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=134682391]
 texture_filter = 1
 position = Vector2(950, 75)
 sprite_frames = SubResource("SpriteFrames_6knn8")
 autoplay = "default"
-frame_progress = 0.47469485
+frame_progress = 0.3287084
 
 [node name="Camp2" type="Sprite2D" parent="." unique_id=903208510]
 texture_filter = 1
@@ -794,7 +779,7 @@ position = Vector2(140, 228)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_daeh6")
 autoplay = "default"
-frame_progress = 0.3808228
+frame_progress = 0.23481174
 
 [node name="Campfire2" type="AnimatedSprite2D" parent="." unique_id=535652794]
 texture_filter = 1
@@ -950,6 +935,9 @@ debug_color = Color(0.47595608, 0.57731783, 0.3387668, 0.41960785)
 
 [node name="Spawner" parent="." unique_id=1872733021 instance=ExtResource("37_gbjkv")]
 z_index = 50
+script = ExtResource("33_fpxdy")
+monster_scenes = Array[PackedScene]([ExtResource("34_uv1om"), ExtResource("35_1g7bq"), ExtResource("36_7xh8u")])
+monster_final_boss = ExtResource("37_18ouw")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=288204945]
 stream = ExtResource("38_xtl37")

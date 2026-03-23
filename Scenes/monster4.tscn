@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://oo4b5esh3oik"]
 
 [ext_resource type="Texture2D" uid="uid://cpe8dvf2umipt" path="res://Assets/Monsters/PNG/9/9_enemies_1_attack_000.png" id="1_lnw6o"]
+[ext_resource type="Script" uid="uid://fstx5hcumq8v" path="res://Scripts/monster_4.gd" id="1_s0hmb"]
+[ext_resource type="AudioStream" uid="uid://c68k5kxhbk30i" path="res://Assets/Music-SoundEffects/Ogre Sound Effects [4Ucu4Pf_T0I].mp3" id="2_jqlwr"]
 [ext_resource type="Texture2D" uid="uid://b1lms85vhdhuu" path="res://Assets/Monsters/PNG/9/9_enemies_1_attack_001.png" id="2_lvj8j"]
 [ext_resource type="Texture2D" uid="uid://4js6v2mxkjyo" path="res://Assets/Monsters/PNG/9/9_enemies_1_attack_002.png" id="3_4lmex"]
 [ext_resource type="Texture2D" uid="uid://wx267qq631k7" path="res://Assets/Monsters/PNG/9/9_enemies_1_attack_003.png" id="4_s0hmb"]
@@ -102,6 +104,9 @@
 [ext_resource type="Texture2D" uid="uid://cht23sxj745xd" path="res://Assets/Monsters/PNG/9/9_enemies_1_walk_019.png" id="100_he6tc"]
 [ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="101_4lmex"]
 [ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="102_s0hmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnw6o"]
+size = Vector2(65, 88)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fdpnu"]
 animations = [{
@@ -431,26 +436,31 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnw6o"]
-size = Vector2(115, 211)
+[node name="Monster4" type="Area2D" unique_id=13846002 groups=["enemies"]]
+script = ExtResource("1_s0hmb")
+spawn_audio = ExtResource("2_jqlwr")
 
-[node name="Node2D" type="Area2D" unique_id=13846002 groups=["enemies"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012242027]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_lnw6o")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2123908748]
+[node name="Visuals" type="Node2D" parent="." unique_id=1234832682]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=2123908748]
+position = Vector2(26, -6)
+scale = Vector2(0.45, 0.414)
 sprite_frames = SubResource("SpriteFrames_fdpnu")
 animation = &"Walk"
 autoplay = "Walk"
 frame_progress = 0.10282385
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012242027]
-position = Vector2(-67.5, 10.5)
-shape = SubResource("RectangleShape2D_lnw6o")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1423871060]
-offset_left = -244.0
-offset_top = -137.0
-offset_right = 465.0
-offset_bottom = -57.0
-scale = Vector2(0.5, 0.5)
+[node name="HealthBar" type="TextureProgressBar" parent="Visuals" unique_id=1423871060]
+offset_left = -71.0
+offset_top = -65.0
+offset_right = 638.0
+offset_bottom = 15.0
+scale = Vector2(0.2, 0.2)
 texture_under = ExtResource("101_4lmex")
 texture_progress = ExtResource("102_s0hmb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

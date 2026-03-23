@@ -463,3 +463,5 @@ scale = Vector2(0.15, 0.15)
 texture_under = ExtResource("101_5qekk")
 texture_progress = ExtResource("102_fjm61")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

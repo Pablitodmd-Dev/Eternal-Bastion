@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c68k5kxhbk30i"
+path="res://.godot/imported/Ogre Sound Effects [4Ucu4Pf_T0I].mp3-a52e307092789017f84d6084f2c8f2d7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Ogre Sound Effects [4Ucu4Pf_T0I].mp3"
+dest_files=["res://.godot/imported/Ogre Sound Effects [4Ucu4Pf_T0I].mp3-a52e307092789017f84d6084f2c8f2d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

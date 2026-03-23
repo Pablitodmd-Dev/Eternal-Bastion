@@ -1,11 +1,11 @@
 extends Area2D
 
 @export var spawn_audio: AudioStream 
-@export var health: float = 150.0
-@export var damage: float = 5.0
-@export var speed: float = 50.0
-@export var attack_speed: float = 2.0
-@export var coin_value: int = 15
+@export var health: float = 50.0 
+@export var damage: float = 40.0  
+@export var speed: float = 60.0   
+@export var attack_speed: float = 1.0 
+@export var coin_value: int = 25 
 
 var target_castle: Area2D = null
 var is_attacking: bool = false
@@ -13,23 +13,22 @@ var attack_timer: float = 0.0
 var movement_tween: Tween 
 var last_x: float = 0.0
 
-@onready var visuals: Node2D = $Visuals # El nuevo contenedor
+@onready var visuals: Node2D = $Visuals
 @onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
 @onready var health_bar: TextureProgressBar = $Visuals/HealthBar
 
 func _ready() -> void:
 	health_bar.max_value = health
 	health_bar.value = health
-	last_x = global_position.x
 	sprite.play("Walk")
+	last_x = global_position.x
 
 func _process(delta: float) -> void:
 	if not is_attacking:
-		if global_position.x < last_x - 0.1: # Movimiento a la IZQUIERDA
-			visuals.scale.x = -1 # Gira todo el bloque visual
-		elif global_position.x > last_x + 0.1: # Movimiento a la DERECHA
-			visuals.scale.x = 1 # Vuelve a la normalidad
-			
+		if global_position.x < last_x - 0.1: 
+			visuals.scale.x = -1 
+		elif global_position.x > last_x + 0.1: 
+			visuals.scale.x = 1
 		last_x = global_position.x
 
 	if is_attacking:
@@ -57,8 +56,11 @@ func take_damage(amount: float) -> void:
 	flash_tween.tween_property(sprite, "modulate", Color(1, 1, 1), 0.1)
 	
 	if health <= 0:
-		GameManager.coins += coin_value
-		queue_free()
+		die()
+
+func die() -> void:
+	GameManager.coins += coin_value
+	queue_free()
 
 func resume_movement():
 	is_attacking = false
