@@ -17,6 +17,9 @@ func _ready() -> void:
 		shop.item_selected.connect(_on_item_selected_from_shop)
 
 func _process(delta: float) -> void:
+	if current_pending_item != null and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		cancel_placement()
+		return
 	if GameManager.mana < GameManager.max_mana:
 		GameManager.mana += mana_regeneration_rate * delta
 		GameManager.mana = clamp(GameManager.mana, 0.0, GameManager.max_mana)
@@ -56,48 +59,39 @@ func update_preview() -> void:
 		return
 		
 	var mouse_pos = get_global_mouse_position()
-	preview_indicator.global_position = mouse_pos
-	
-	var cost = float(current_pending_item["cost"])
-	var can_afford = false
+	var platform = get_platform_at_position(mouse_pos)
 	
 	if current_pending_item["type"] == "spell":
-		can_afford = GameManager.mana >= cost
+		preview_indicator.global_position = mouse_pos
 	else:
-		can_afford = GameManager.coins >= int(cost)
-
-	if current_pending_item["type"] == "spell":
-		if is_on_path(mouse_pos) and can_afford:
-			preview_indicator.color = Color(0, 1, 0, 0.3)
+		if platform != null and platform.can_build_here():
+			preview_indicator.global_position = platform.global_position + Vector2(0, -40) 
+			preview_indicator.color = Color(0, 1, 0, 0.4)
 		else:
-			preview_indicator.color = Color(1, 0, 0, 0.3)
-	else:
-		if can_afford:
-			preview_indicator.color = Color(1, 1, 1, 0.2)
-		else:
-			preview_indicator.color = Color(1, 0, 0, 0.3)
+			preview_indicator.global_position = mouse_pos
+			preview_indicator.color = Color(1, 0, 0, 0.4)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if current_pending_item == null: 
 		return
 	
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			cancel_placement()
-		elif event.button_index == MOUSE_BUTTON_LEFT:
-			var pos = get_global_mouse_position()
-			var cost = float(current_pending_item["cost"])
-			
-			if current_pending_item["type"] == "spell":
-				if is_on_path(pos) and GameManager.mana >= cost:
-					spawn_item(pos)
-					GameManager.mana -= cost
-					cancel_placement()
-			else:
-				if GameManager.coins >= int(cost):
-					spawn_item(pos)
-					GameManager.coins -= int(cost)
-					cancel_placement()
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var pos = get_global_mouse_position()
+		var cost = float(current_pending_item["cost"])
+		
+		if current_pending_item["type"] == "spell":
+			if is_on_path(pos) and GameManager.mana >= cost:
+				spawn_item(pos)
+				GameManager.mana -= cost
+				cancel_placement()
+		else:
+			var platform = get_platform_at_position(pos)
+			if platform != null and platform.can_build_here() and GameManager.coins >= int(cost):
+				var spawn_pos = platform.global_position + Vector2(0, -40) 
+				spawn_item(spawn_pos)
+				platform.is_occupied = true
+				GameManager.coins -= int(cost)
+				cancel_placement()
 
 func is_on_path(pos: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state
@@ -131,3 +125,16 @@ func cancel_placement() -> void:
 		preview_indicator.queue_free()
 		preview_indicator = null
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
+func get_platform_at_position(pos: Vector2) -> Node2D:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = pos
+	query.collide_with_areas = true
+	
+	var results = space_state.intersect_point(query)
+	for result in results:
+		var collider = result.collider
+		if collider.is_in_group("Platforms"):
+			return collider
+	return null

@@ -24,6 +24,7 @@ GameManager="*uid://cwmglg3b0fhi5"
 Castle=""
 enemies=""
 Path=""
+Platforms=""
 
 [physics]
 
