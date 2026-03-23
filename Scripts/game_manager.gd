@@ -35,11 +35,17 @@ func create_preview() -> void:
 	if preview_indicator:
 		preview_indicator.queue_free()
 	
+	var item_range = 50.0
+	if current_pending_item.has("range"):
+		item_range = float(current_pending_item["range"])
+	
 	preview_indicator = Polygon2D.new()
 	var points = PackedVector2Array()
-	for i in range(32):
-		var angle = deg_to_rad(i * 360.0 / 32.0)
-		points.append(Vector2(cos(angle), sin(angle)) * 40.0)
+	
+	var quality = 64 
+	for i in range(quality + 1):
+		var angle = deg_to_rad(i * 360.0 / quality)
+		points.append(Vector2(cos(angle), sin(angle)) * item_range)
 	
 	preview_indicator.polygon = points
 	preview_indicator.z_index = 10
@@ -51,14 +57,25 @@ func update_preview() -> void:
 		
 	var mouse_pos = get_global_mouse_position()
 	preview_indicator.global_position = mouse_pos
-		
+	
+	var cost = float(current_pending_item["cost"])
+	var can_afford = false
+	
 	if current_pending_item["type"] == "spell":
-		if is_on_path(mouse_pos):
+		can_afford = GameManager.mana >= cost
+	else:
+		can_afford = GameManager.coins >= int(cost)
+
+	if current_pending_item["type"] == "spell":
+		if is_on_path(mouse_pos) and can_afford:
 			preview_indicator.color = Color(0, 1, 0, 0.3)
 		else:
 			preview_indicator.color = Color(1, 0, 0, 0.3)
 	else:
-		preview_indicator.color = Color(1, 1, 1, 0.3)
+		if can_afford:
+			preview_indicator.color = Color(1, 1, 1, 0.2)
+		else:
+			preview_indicator.color = Color(1, 0, 0, 0.3)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if current_pending_item == null: 

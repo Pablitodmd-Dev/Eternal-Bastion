@@ -2,6 +2,7 @@
   "lightning": {
 	"name": "Lightning",
 	"cost": 25,
+	"range": 25,
 	"scene_path": "res://scenes/lightning.tscn",
 	"type": "spell"
   },
@@ -26,18 +27,21 @@
   "barricade": {
 	"name": "Barricade",
 	"cost": 70,
+	"range": 35,
 	"scene_path": "res://scenes/barricade.tscn",
 	"type": "spell"
   },
   "spike": {
 	"name": "Spikes",
 	"cost": 30,
+	"range": 30,
 	"scene_path": "res://scenes/spike.tscn",
 	"type": "spell"
   },
   "bomb": {
 	"name": "Bomb",
 	"cost": 85,
+	"range": 90,
 	"scene_path": "res://scenes/bomb.tscn",
 	"type": "spell"
   },
@@ -52,11 +56,11 @@
 },
 "warrior": {
 	"name": "Warrior Slash",
-	"cost": 75,
+	"cost": 70,
 	"scene_path": "res://scenes/warrior.tscn",
 	"type": "unit",
-	"range": 150,
-	"damage": 35,
+	"range": 80,
+	"damage": 30,
 	"attack_rate": 0.8
   }
 }
