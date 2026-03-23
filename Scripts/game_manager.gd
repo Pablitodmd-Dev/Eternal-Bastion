@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var mana_regeneration_rate: float = 2.5
+@export var game_over_scene: PackedScene 
 
 @onready var mana_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaMana/ManaLabel
 @onready var gold_label: Label = $ItemShop/PanelContainer/VBoxContainer/FilaOro/GoldLabel 
@@ -13,6 +14,8 @@ var preview_indicator: Polygon2D = null
 func _ready() -> void:
 	GameManager.reset_level()
 	
+	GameManager.current_level_path = scene_file_path
+	
 	if shop.has_signal("item_selected"):
 		shop.item_selected.connect(_on_item_selected_from_shop)
 
@@ -20,6 +23,7 @@ func _process(delta: float) -> void:
 	if current_pending_item != null and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		cancel_placement()
 		return
+		
 	if GameManager.mana < GameManager.max_mana:
 		GameManager.mana += mana_regeneration_rate * delta
 		GameManager.mana = clamp(GameManager.mana, 0.0, GameManager.max_mana)
@@ -28,6 +32,14 @@ func _process(delta: float) -> void:
 	gold_label.text = "Oro: " + str(GameManager.coins)
 	
 	update_preview()
+
+func show_game_over() -> void:
+	if game_over_scene:
+		var menu = game_over_scene.instantiate()
+		add_child(menu)
+		get_tree().paused = true 
+	else:
+		print("Error: No has asignado la escena de Game Over en el Inspector")
 
 func _on_item_selected_from_shop(item_data) -> void:
 	current_pending_item = item_data
@@ -63,15 +75,12 @@ func update_preview() -> void:
 	
 	if current_pending_item["type"] == "spell":
 		preview_indicator.global_position = mouse_pos
-		
 		if is_on_path(mouse_pos) and GameManager.mana >= cost:
 			preview_indicator.color = Color(0, 1, 0, 0.15)
 		else:
 			preview_indicator.color = Color(1, 0, 0, 0.15)
-			
 	else:
 		var platform = get_platform_at_position(mouse_pos)
-		
 		if platform != null and platform.can_build_here() and GameManager.coins >= int(cost):
 			preview_indicator.global_position = platform.global_position + Vector2(0, -40)
 			preview_indicator.color = Color(0, 1, 0, 0.15)
@@ -106,7 +115,6 @@ func is_on_path(pos: Vector2) -> bool:
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = pos
 	query.collide_with_areas = true
-	
 	var results = space_state.intersect_point(query)
 	for result in results:
 		if result.collider.is_in_group("Path"):
@@ -119,9 +127,7 @@ func spawn_item(pos: Vector2) -> void:
 		scene_cache[path] = load(path)
 	
 	var instance = scene_cache[path].instantiate()
-	
 	instance.position = pos
-		
 	add_child(instance)
 
 	if instance.has_method("setup_unit"):
@@ -139,7 +145,6 @@ func get_platform_at_position(pos: Vector2) -> Node2D:
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = pos
 	query.collide_with_areas = true
-	
 	var results = space_state.intersect_point(query)
 	for result in results:
 		var collider = result.collider

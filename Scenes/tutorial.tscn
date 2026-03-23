@@ -43,6 +43,7 @@
 [ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="40_dtmgi"]
 [ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="41_ilalk"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="42_b3wap"]
+[ext_resource type="PackedScene" uid="uid://buvb4st5gmd6m" path="res://Scenes/game_over.tscn" id="44_b3wap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyc06"]
 texture = ExtResource("1_rwowx")
@@ -308,6 +309,7 @@ corner_radius_bottom_left = 5
 
 [node name="Tutorial" type="Node2D" unique_id=1662794123]
 script = ExtResource("1_70gml")
+game_over_scene = ExtResource("44_b3wap")
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("8_7vrqn")]
 

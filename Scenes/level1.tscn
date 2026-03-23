@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ca5kra51hrmdj" path="res://Assets/fields-tileset/1 Tiles/FieldsTileset.png" id="1_4hvuo"]
 [ext_resource type="Script" uid="uid://b74j3vwq06umb" path="res://Scripts/game_manager.gd" id="1_4iphx"]
+[ext_resource type="PackedScene" uid="uid://buvb4st5gmd6m" path="res://Scenes/game_over.tscn" id="2_mwr0o"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="2_vly50"]
 [ext_resource type="Texture2D" uid="uid://c06u3e600pkpk" path="res://Assets/fields-tileset/2 Objects/3 Pointer/1.png" id="3_h54da"]
 [ext_resource type="PackedScene" uid="uid://c7xwdlecx3rcs" path="res://Scenes/WoodenFenceDecoration.tscn" id="3_lyd6k"]
@@ -310,6 +311,7 @@ size = Vector2(547, 94)
 
 [node name="Node2D" type="Node2D" unique_id=737050463]
 script = ExtResource("1_4iphx")
+game_over_scene = ExtResource("2_mwr0o")
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("2_vly50")]
 
