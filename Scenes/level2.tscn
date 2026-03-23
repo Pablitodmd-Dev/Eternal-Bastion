@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cmrcm5v3yjccy"]
 
 [ext_resource type="Script" uid="uid://b74j3vwq06umb" path="res://Scripts/game_manager.gd" id="1_fpxdy"]
+[ext_resource type="PackedScene" uid="uid://buvb4st5gmd6m" path="res://Scenes/game_over.tscn" id="2_fpxdy"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="2_uv1om"]
 [ext_resource type="PackedScene" uid="uid://b178avw3kfj01" path="res://Scenes/PauseMenu.tscn" id="3_1g7bq"]
 [ext_resource type="Texture2D" uid="uid://ca5kra51hrmdj" path="res://Assets/fields-tileset/1 Tiles/FieldsTileset.png" id="4_7xh8u"]
@@ -312,6 +313,7 @@ size = Vector2(45, 92)
 
 [node name="Node2D" type="Node2D" unique_id=737050463]
 script = ExtResource("1_fpxdy")
+game_over_scene = ExtResource("2_fpxdy")
 
 [node name="ItemShop" parent="." unique_id=1429226809 instance=ExtResource("2_uv1om")]
 
