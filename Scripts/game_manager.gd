@@ -11,6 +11,7 @@ var current_pending_item = null
 var scene_cache: Dictionary = {}
 var preview_indicator: Polygon2D = null
 
+
 func _ready() -> void:
 	GameManager.reset_level()
 	
