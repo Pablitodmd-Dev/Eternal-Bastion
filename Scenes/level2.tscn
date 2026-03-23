@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cmrcm5v3yjccy"]
 
 [ext_resource type="Script" uid="uid://b74j3vwq06umb" path="res://Scripts/game_manager.gd" id="1_fpxdy"]
-[ext_resource type="PackedScene" uid="uid://buvb4st5gmd6m" path="res://Scenes/game_over.tscn" id="2_fpxdy"]
+[ext_resource type="PackedScene" uid="uid://qg007hfo7dmc" path="res://Scenes/game_over.tscn" id="2_fpxdy"]
 [ext_resource type="PackedScene" uid="uid://kc5q25ppnab1" path="res://Scenes/item_shop.tscn" id="2_uv1om"]
-[ext_resource type="PackedScene" uid="uid://b178avw3kfj01" path="res://Scenes/PauseMenu.tscn" id="3_1g7bq"]
+[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="3_1g7bq"]
 [ext_resource type="Texture2D" uid="uid://ca5kra51hrmdj" path="res://Assets/fields-tileset/1 Tiles/FieldsTileset.png" id="4_7xh8u"]
 [ext_resource type="Texture2D" uid="uid://c06u3e600pkpk" path="res://Assets/fields-tileset/2 Objects/3 Pointer/1.png" id="5_18ouw"]
 [ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="6_7l1c6"]
@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://buuc1umh1oh65" path="res://Assets/fields-tileset/2 Objects/4 Stone/7.png" id="30_opnaa"]
 [ext_resource type="Texture2D" uid="uid://mocrym4jlkxc" path="res://Assets/fields-tileset/3 Animated Objects/2 Campfire/2.png" id="31_t6ojf"]
 [ext_resource type="Texture2D" uid="uid://c38qdjhooya8d" path="res://Assets/fields-tileset/2 Objects/9 Bush/1.png" id="32_b54i3"]
-[ext_resource type="Script" uid="uid://b8enue40eg0lg" path="res://Scripts/spawner_level_2.gd" id="33_fpxdy"]
+[ext_resource type="Script" path="res://Scripts/spawner_level_2.gd" id="33_fpxdy"]
 [ext_resource type="Texture2D" uid="uid://bx7t7l4g6luo" path="res://Assets/fields-tileset/2 Objects/4 Stone/13.png" id="34_jhjok"]
 [ext_resource type="PackedScene" uid="uid://c6qb25wa6kcfe" path="res://Scenes/monster1.tscn" id="34_uv1om"]
 [ext_resource type="PackedScene" uid="uid://dbf1h5qyws5gu" path="res://Scenes/monster2.tscn" id="35_1g7bq"]
@@ -952,4 +952,5 @@ position = Vector2(1056.0001, 130.00002)
 scale = Vector2(0.8, 0.8)
 destroyed_scale = Vector2(2, 2)
 
+[connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_level_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_timer_timeout"]

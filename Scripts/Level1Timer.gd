@@ -20,7 +20,6 @@ func update_ui() -> void:
 
 func check_final_victory() -> void:
 	var enemies_remaining = get_tree().get_nodes_in_group("enemies")
-	
 	if enemies_remaining.size() == 0:
 		show_win_screen()
 
