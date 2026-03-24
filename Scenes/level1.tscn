@@ -961,6 +961,3 @@ texture_filter = 1
 position = Vector2(539, 316)
 scale = Vector2(0.8, 0.8)
 destroyed_scale = Vector2(2, 2)
-
-[connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_level_timer_timeout"]
-[connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_timer_timeout"]

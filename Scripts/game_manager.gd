@@ -40,7 +40,7 @@ func show_game_over() -> void:
 		add_child(menu)
 		get_tree().paused = true 
 	else:
-		print("Error: No has asignado la escena de Game Over en el Inspector")
+		print("Error: No se ha asignado la escena de Game Over en el Inspector")
 
 func _on_item_selected_from_shop(item_data) -> void:
 	current_pending_item = item_data

@@ -20,9 +20,9 @@
 	"cost": 50,
 	"scene_path": "res://scenes/s_archer.tscn",
 	"type": "unit",
-	"range": 150,
+	"range": 200,
 	"damage": 5,
-	"attack_rate": 2.4
+	"attack_rate": 2.0
   },
   "barricade": {
 	"name": "Barricade",
@@ -50,7 +50,7 @@
 	"cost": 60,
 	"scene_path": "res://scenes/lancer.tscn",
 	"type": "unit",
-	"range": 100,
+	"range": 120,
 	"damage": 15,
 	"attack_rate": 1.5
 },
@@ -59,8 +59,8 @@
 	"cost": 70,
 	"scene_path": "res://scenes/warrior.tscn",
 	"type": "unit",
-	"range": 80,
-	"damage": 30,
+	"range": 100,
+	"damage": 40,
 	"attack_rate": 0.8
   }
 }

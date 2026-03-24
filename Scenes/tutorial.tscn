@@ -43,7 +43,7 @@
 [ext_resource type="Script" uid="uid://bw2tvqa80q1a8" path="res://Scripts/Level1Timer.gd" id="40_dtmgi"]
 [ext_resource type="Texture2D" uid="uid://bkihixj1dck56" path="res://Assets/fields-tileset/4 Textures/timerIcon.png" id="41_ilalk"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="42_b3wap"]
-[ext_resource type="PackedScene" uid="uid://buvb4st5gmd6m" path="res://Scenes/game_over.tscn" id="44_b3wap"]
+[ext_resource type="PackedScene" uid="uid://qg007hfo7dmc" path="res://Scenes/game_over.tscn" id="44_b3wap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyc06"]
 texture = ExtResource("1_rwowx")
@@ -762,4 +762,3 @@ theme_override_fonts/font = ExtResource("42_b3wap")
 theme_override_font_sizes/font_size = 32
 
 [connection signal="timeout" from="LevelTimer" to="Spawner" method="_on_timer_timeout"]
-[connection signal="timeout" from="LevelTimer" to="CanvasLayer" method="_on_level_timer_timeout"]
