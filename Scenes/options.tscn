@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://belbcbcd8jbc7"]
+[gd_scene format=3 uid="uid://huki6x0eyby2"]
 
 [ext_resource type="Texture2D" uid="uid://bgixdngu1yil" path="res://Assets/fields-tileset/5 MenusImages/MainMenuBackground.png" id="1_qyyw6"]
-[ext_resource type="Script" uid="uid://3efsvojx6mpe" path="res://Scripts/options.gd" id="1_ww8vx"]
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_ww8vx"]
 [ext_resource type="Texture2D" uid="uid://dvc1q8xu02r8c" path="res://Assets/fields-tileset/5 MenusImages/ExitText.png" id="2_ww8vx"]
 [ext_resource type="FontFile" uid="uid://bdc1hwvw20yas" path="res://Assets/fonts/MedievalSharp-Regular.ttf" id="3_kftxf"]
+[ext_resource type="AudioStream" uid="uid://dql7mbbwe5yhf" path="res://Assets/Music-SoundEffects/[Cinematic Music] ＂The Pulse“ ｜ Epic Drum Cinematic Music.mp3" id="5_kftxf"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1811966269]
 script = ExtResource("1_ww8vx")
@@ -67,5 +68,9 @@ Right-click to deactivate it.
 Press Esc to pause the game."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1246347769]
+stream = ExtResource("5_kftxf")
+autoplay = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

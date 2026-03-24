@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8jahyc56jgb8" path="res://Scripts/you_won.gd" id="1_brqi7"]
 [ext_resource type="Texture2D" uid="uid://dp7dxow6n4glp" path="res://Assets/fields-tileset/5 MenusImages/winbackground.png" id="2_a50nc"]
 [ext_resource type="Texture2D" uid="uid://p6b1efysrlmw" path="res://Assets/fields-tileset/5 MenusImages/youwon.png" id="3_tbhup"]
+[ext_resource type="AudioStream" uid="uid://bb65aknisx1qg" path="res://Assets/Music-SoundEffects/Warrior's Way ⧸ Battle OST - 22 - We Stand Victorious.mp3" id="5_brqi7"]
 [ext_resource type="Texture2D" uid="uid://dvc1q8xu02r8c" path="res://Assets/fields-tileset/5 MenusImages/ExitText.png" id="5_qkbtm"]
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=2143454983]
@@ -44,5 +45,9 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("5_qkbtm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=573546658]
+stream = ExtResource("5_brqi7")
+autoplay = true
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

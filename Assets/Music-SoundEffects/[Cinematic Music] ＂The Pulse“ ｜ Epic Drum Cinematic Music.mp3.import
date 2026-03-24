@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dql7mbbwe5yhf"
+path="res://.godot/imported/[Cinematic Music] ＂The Pulse“ ｜ Epic Drum Cinematic Music.mp3-1f75ad784642de77f237d75a3c02daa4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/[Cinematic Music] ＂The Pulse“ ｜ Epic Drum Cinematic Music.mp3"
+dest_files=["res://.godot/imported/[Cinematic Music] ＂The Pulse“ ｜ Epic Drum Cinematic Music.mp3-1f75ad784642de77f237d75a3c02daa4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
