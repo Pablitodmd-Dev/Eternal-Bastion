@@ -3,6 +3,7 @@
 	"name": "Lightning",
 	"cost": 25,
 	"range": 25,
+	"damage":50,
 	"scene_path": "res://scenes/lightning.tscn",
 	"type": "spell"
   },
@@ -28,6 +29,7 @@
 	"name": "Barricade",
 	"cost": 70,
 	"range": 35,
+	"damage":10,
 	"scene_path": "res://scenes/barricade.tscn",
 	"type": "spell"
   },
@@ -35,6 +37,7 @@
 	"name": "Spikes",
 	"cost": 30,
 	"range": 30,
+	"damage":5,
 	"scene_path": "res://scenes/spike.tscn",
 	"type": "spell"
   },
@@ -42,6 +45,7 @@
 	"name": "Bomb",
 	"cost": 85,
 	"range": 90,
+	"damage":150,
 	"scene_path": "res://scenes/bomb.tscn",
 	"type": "spell"
   },
