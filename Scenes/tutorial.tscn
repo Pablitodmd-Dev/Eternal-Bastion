@@ -696,7 +696,7 @@ curve = SubResource("Curve2D_enkcc")
 position = Vector2(610, 224)
 scale = Vector2(2, 2)
 monster_scene = ExtResource("34_0uns8")
-anuncio_escena = ExtResource("38_e1qrx")
+wave_scene = ExtResource("38_e1qrx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spawner" unique_id=82088817]
 stream = ExtResource("34_gyc06")
