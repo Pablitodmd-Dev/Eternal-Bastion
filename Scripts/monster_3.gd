@@ -1,10 +1,10 @@
 extends Area2D
 
 @export var spawn_audio: AudioStream 
-@export var health: float = 50.0 
-@export var damage: float = 40.0  
-@export var speed: float = 60.0   
-@export var attack_speed: float = 1.0 
+@export var health: float = 80.0 
+@export var damage: float = 20.0  
+@export var speed: float = 70.0   
+@export var attack_speed: float = 1.5 
 @export var coin_value: int = 25 
 
 var target_castle: Area2D = null
