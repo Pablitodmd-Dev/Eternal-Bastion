@@ -105,6 +105,9 @@
 [ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="101_5qekk"]
 [ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="102_fjm61"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evt0o"]
+size = Vector2(38, 65)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ddo3"]
 animations = [{
 "frames": [{
@@ -433,25 +436,25 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evt0o"]
-size = Vector2(38, 65)
-
 [node name="Monster2" type="Area2D" unique_id=993819915 groups=["enemies"]]
+position = Vector2(16, -4)
 script = ExtResource("1_fjm61")
 spawn_audio = ExtResource("2_ukt18")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1719293398]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=438517099]
+position = Vector2(-18, 5)
+shape = SubResource("RectangleShape2D_evt0o")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1283686394]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1719293398]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_4ddo3")
 animation = &"Die"
 autoplay = "Walk"
 frame_progress = 0.88119024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=438517099]
-position = Vector2(-16, 4.5)
-shape = SubResource("RectangleShape2D_evt0o")
-
-[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1538665638]
+[node name="HealthBar" type="TextureProgressBar" parent="Visuals" unique_id=1538665638]
 offset_left = -68.0
 offset_top = -40.0
 offset_right = 641.0
@@ -459,3 +462,6 @@ offset_bottom = 40.0
 scale = Vector2(0.15, 0.15)
 texture_under = ExtResource("101_5qekk")
 texture_progress = ExtResource("102_fjm61")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

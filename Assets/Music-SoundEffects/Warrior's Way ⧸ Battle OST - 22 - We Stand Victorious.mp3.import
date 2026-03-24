@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb65aknisx1qg"
+path="res://.godot/imported/Warrior's Way ⧸ Battle OST - 22 - We Stand Victorious.mp3-cbbf96d91fd6db4e5215e2c441f66ab9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music-SoundEffects/Warrior's Way ⧸ Battle OST - 22 - We Stand Victorious.mp3"
+dest_files=["res://.godot/imported/Warrior's Way ⧸ Battle OST - 22 - We Stand Victorious.mp3-cbbf96d91fd6db4e5215e2c441f66ab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

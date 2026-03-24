@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://f15u7uhg4mr7"]
 
 [ext_resource type="Texture2D" uid="uid://drh0glw7d5s60" path="res://Assets/Monsters/PNG/8/8_enemies_1_attack_000.png" id="1_jl4fi"]
+[ext_resource type="Script" uid="uid://uvyprephdukw" path="res://Scripts/monster_3.gd" id="1_y677x"]
+[ext_resource type="AudioStream" uid="uid://bopxlw6uq1mq5" path="res://Assets/Music-SoundEffects/Angry Man - Sound Effect [2Ed7jZZgHWI].mp3" id="2_25fx2"]
 [ext_resource type="Texture2D" uid="uid://cuakvx6jr5886" path="res://Assets/Monsters/PNG/8/8_enemies_1_attack_001.png" id="2_nlypw"]
 [ext_resource type="Texture2D" uid="uid://iwqwfki2h8uo" path="res://Assets/Monsters/PNG/8/8_enemies_1_attack_002.png" id="3_5beob"]
 [ext_resource type="Texture2D" uid="uid://bl3kb0al3cnmx" path="res://Assets/Monsters/PNG/8/8_enemies_1_attack_003.png" id="4_5diy1"]
@@ -102,6 +104,9 @@
 [ext_resource type="Texture2D" uid="uid://c25raqm1v0e8k" path="res://Assets/Monsters/PNG/8/8_enemies_1_walk_019.png" id="80_ltvn6"]
 [ext_resource type="Texture2D" uid="uid://b00j6elg6iaou" path="res://Assets/health_bar/health_bar-07.png" id="101_gaoml"]
 [ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="102_y677x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckgvg"]
+size = Vector2(37, 67)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oty5w"]
 animations = [{
@@ -431,26 +436,33 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckgvg"]
-size = Vector2(116, 210)
-
-[node name="Node2D" type="Area2D" unique_id=28797794 groups=["enemies"]]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1136021016]
-sprite_frames = SubResource("SpriteFrames_oty5w")
-animation = &"Hurt"
-autoplay = "Walk"
-frame_progress = 0.5150077
+[node name="Monster3" type="Area2D" unique_id=28797794 groups=["enemies"]]
+position = Vector2(-21, 17)
+script = ExtResource("1_y677x")
+spawn_audio = ExtResource("2_25fx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197978178]
-position = Vector2(-52, 25)
+position = Vector2(18.5, -21.5)
 shape = SubResource("RectangleShape2D_ckgvg")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2049550124]
-offset_left = -190.0
-offset_top = -120.0
-offset_right = 519.0
-offset_bottom = -40.0
-scale = Vector2(0.4, 0.4)
+[node name="Visuals" type="Node2D" parent="." unique_id=639316477]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1136021016]
+position = Vector2(33.999985, -27)
+scale = Vector2(0.3, 0.287)
+sprite_frames = SubResource("SpriteFrames_oty5w")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.0005950093
+
+[node name="HealthBar" type="TextureProgressBar" parent="Visuals" unique_id=2049550124]
+offset_left = -14.000004
+offset_top = -65.0
+offset_right = 695.0
+offset_bottom = 15.0
+scale = Vector2(0.1, 0.1)
 texture_under = ExtResource("101_gaoml")
 texture_progress = ExtResource("102_y677x")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

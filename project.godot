@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Eternal Bastion"
-run/main_scene="uid://cdfoc74l56doh"
+run/main_scene="uid://7vty1maihn5b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ GameManager="*uid://cwmglg3b0fhi5"
 Castle=""
 enemies=""
 Path=""
+Platforms=""
 
 [physics]
 

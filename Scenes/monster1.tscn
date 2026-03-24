@@ -103,6 +103,9 @@
 [ext_resource type="Texture2D" uid="uid://ffox6xh7n4qh" path="res://Assets/Monsters/PNG/3/3_enemies_1_walk_019.png" id="100_8c7m3"]
 [ext_resource type="Texture2D" uid="uid://dsypkfe1ied0k" path="res://Assets/health_bar/health_bar-06.png" id="101_k58tv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nmhp"]
+size = Vector2(28, 49)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa0lp"]
 atlas = ExtResource("1_fv8n3")
 region = Rect2(0, 0, 349, 291)
@@ -439,26 +442,28 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nmhp"]
-size = Vector2(28, 49)
-
 [node name="Monster1" type="Area2D" unique_id=1913571639 groups=["enemies"]]
+position = Vector2(16, -6)
 collision_layer = 3
 script = ExtResource("1_6nmhp")
 spawn_audio = ExtResource("2_k58tv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678338679]
-scale = Vector2(0.24169053, 0.22216494)
-sprite_frames = SubResource("SpriteFrames_y42e7")
-animation = &"Walk"
-autoplay = "Walk"
-frame_progress = 0.4299783
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690771051]
 position = Vector2(-16, 5.5)
 shape = SubResource("RectangleShape2D_6nmhp")
 
-[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1353438697]
+[node name="Visuals" type="Node2D" parent="." unique_id=1612955439]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=678338679]
+texture_filter = 1
+scale = Vector2(0.24169053, 0.22216494)
+sprite_frames = SubResource("SpriteFrames_y42e7")
+animation = &"Walk"
+autoplay = "Walk"
+frame = 5
+frame_progress = 0.37611306
+
+[node name="HealthBar" type="TextureProgressBar" parent="Visuals" unique_id=1353438697]
 offset_left = -51.0
 offset_top = -28.0
 offset_right = 658.0
@@ -466,5 +471,6 @@ offset_bottom = 52.0
 scale = Vector2(0.1, 0.1)
 texture_under = ExtResource("100_6nmhp")
 texture_progress = ExtResource("101_k58tv")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bac13xilbh4ri"]
+
+[ext_resource type="Script" uid="uid://dpmm51q2ma8xf" path="res://Scripts/wave_alert.gd" id="1_0hvy1"]
+[ext_resource type="Texture2D" uid="uid://cdt0gk56nur8s" path="res://Assets/fields-tileset/5 MenusImages/AWaveIsComing.png" id="2_gvgtn"]
+[ext_resource type="AudioStream" uid="uid://oipjmyiwjx6d" path="res://Assets/Music-SoundEffects/TrompetSound.mp3" id="3_px611"]
+
+[sub_resource type="Animation" id="Animation_upuwq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dc84t"]
+resource_name = "mostrar_anuncio"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_upuwq"]
+_data = {
+&"RESET": SubResource("Animation_upuwq"),
+&"mostrar_anuncio": SubResource("Animation_dc84t")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1720890061]
+script = ExtResource("1_0hvy1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=648446364]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -356.0
+offset_right = 470.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_gvgtn")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=5639945]
+stream = ExtResource("3_px611")
+volume_db = 5.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1648436214]
+libraries/ = SubResource("AnimationLibrary_upuwq")
